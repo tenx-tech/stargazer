@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-cd client && npm start
+cd ../client && npm start
