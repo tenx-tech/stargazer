@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "Stargazer application",
+  "description": "Stargazer Application",
   "author": "TenX Team",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

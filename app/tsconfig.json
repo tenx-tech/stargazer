@@ -12,7 +12,7 @@
     "noEmitHelpers": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "outDir": "build/dist",
+    "outDir": "lib",
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
@@ -26,6 +26,6 @@
       "expo": ["node_modules/@types/expo", "node_modules/expo"]
     }
   },
-  "exclude": ["build", "node_modules", "stargazer", "ci"],
+  "exclude": ["node_modules"],
   "types": ["typePatches"]
 }

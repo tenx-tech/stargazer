@@ -11,9 +11,9 @@
     "prettier:fix": "prettier --write './server.ts'",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
     "test": "yarn prettier && yarn tslint && yarn tsc",
-    "start": "tsc-watch --onSuccess \"babel-node ./build/server.js\"",
-    "build": "tsc && \"babel-node ./build/server.js\"",
-    "postinstall": "tsc && babel build -d build"
+    "dev": "tsc-watch --onSuccess \"babel-node ./build/server.js\"",
+    "start": "node ./build/server.js",
+    "build": "tsc && babel build -d build"
   },
   "dependencies": {
     "@types/express": "^4.16.1",
