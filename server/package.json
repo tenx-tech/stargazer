@@ -4,8 +4,7 @@
   "description": "Stargazer Satellite System",
   "main": "server.js",
   "author": "TenX",
-  "license": "UNLICENSED",
-  "private": true,
+  "private": false,
   "scripts": {
     "tsc": "tsc",
     "prettier": "prettier --list-different './server.ts'",

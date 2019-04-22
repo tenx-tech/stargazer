@@ -2,7 +2,7 @@
   "name": "stargazer-client",
   "description": "A React App which renders the static UI for Stargazer",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
