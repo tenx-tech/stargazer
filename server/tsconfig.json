@@ -14,7 +14,7 @@
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "isolatedModules": false,
-    "outDir": "lib",
+    "outDir": "build",
     "jsx": "preserve"
   },
   "include": ["server.ts"]
