@@ -9,9 +9,9 @@
   "main": "./app/lib/index.js",
   "types": "./app/lib/index.d.ts",
   "bin": {
-    "client": "./bin/client",
-    "server": "./bin/server",
-    "build": "./bin/build"
+    "stargazer:client": "./bin/client.sh",
+    "stargazer:server": "./bin/server.sh",
+    "stargazer:build": "./bin/build.sh"
   },
   "scripts": {
     "client": "cd client && npm start",
