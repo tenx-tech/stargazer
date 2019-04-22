@@ -9,6 +9,7 @@
   "scripts": {
     "client": "cd client && npm start",
     "server": "cd server && npm start",
-    "build": "cd client && npm run bundle"
+    "build": "cd client && npm run bundle",
+    "postinstall": "cd app && npm install && cd ../client && npm install"
   }
 }

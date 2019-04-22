@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "jsx": "react-native",
+    "lib": ["es2015", "es2016", "es2017"],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noEmitHelpers": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "build/dist",
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "es2017",
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "@src/*": ["src/*"],
+      "expo": ["node_modules/@types/expo", "node_modules/expo"]
+    }
+  },
+  "exclude": ["build", "node_modules", "stargazer", "ci"],
+  "types": ["typePatches"]
+}

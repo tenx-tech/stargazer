@@ -20,7 +20,7 @@ Types and Config
  */
 const TIMER_DELAY = 850;
 
-interface IProps {
+export interface ScreenshotControllerProps {
   name: string;
   viewRef: any;
   paramsForNextScreen?: any;
@@ -43,7 +43,10 @@ Component
   advancing to the next screen in the route configuration.
 ============================================================================= */
 
-class ScreenshotController extends React.Component<IProps, {}> {
+class ScreenshotController extends React.Component<
+  ScreenshotControllerProps,
+  {}
+> {
   timer: any;
 
   componentDidMount(): void {

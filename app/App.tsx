@@ -12,7 +12,7 @@ Types and Config
 /**
  * This will be the type definition we must export for this library.
  */
-interface IProps {
+export interface StargazerProps {
   autoStart: boolean;
   disableLogging: boolean;
   stargazerServerUrl: string;
@@ -37,10 +37,10 @@ interface IState {
 Root component for the Stargazer App.
 ============================================================================= */
 
-class Stargazer extends React.Component<IProps, IState> {
+class Stargazer extends React.Component<StargazerProps, IState> {
   view: any;
 
-  constructor(props: IProps) {
+  constructor(props: StargazerProps) {
     super(props);
 
     this.state = {

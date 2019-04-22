@@ -1,0 +1,35 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Stargazer application",
+  "author": "TenX Team",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc --declaration",
+    "tslint": "tslint --project tsconfig.json -c tslint.json",
+    "tslint:fix": "tslint --project tsconfig.json -c tslint.json --fix",
+    "prettier:fix": "prettier --config .prettierrc --write './{src,test}/**/*.{ts,tsx}'",
+    "prettier:check": "prettier --config .prettierrc --list-different './{src,test}/**/*.{ts,tsx}'",
+    "format": "npm run prettier:fix && npm run tslint:fix",
+    "test": "npm run prettier:check && npm run tslint && npm run build"
+  },
+  "dependencies": {
+    "expo": "^32.0.0",
+    "react": "16.5.0",
+    "react-navigation": "^3.0.9",
+    "styled-components": "^4.1.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+  },
+  "devDependencies": {
+    "@types/expo": "^31.0.8",
+    "@types/react": "16.4.7",
+    "@types/react-native": "^0.55.17",
+    "@types/react-navigation": "^3.0.1",
+    "@types/styled-components": "^4.1.6",
+    "tslint": "^5.11.0",
+    "prettier": "^1.15.3",
+    "tslint-immutable": "^5.1.0",
+    "typescript": "^3.2.4"
+  }
+}
