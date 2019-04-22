@@ -26,6 +26,7 @@
       "expo": ["node_modules/@types/expo", "node_modules/expo"]
     }
   },
+  "include": ["src"],
   "exclude": ["node_modules"],
   "types": ["typePatches"]
 }

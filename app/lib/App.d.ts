@@ -9,9 +9,9 @@ export interface StargazerProps {
     stargazerServerUrl: string;
     routes: NavigationRouteConfigMap;
     initialRouteName: string;
-    imageAssets?: ReadonlyArray<NodeRequire>;
+    imageAssets?: ReadonlyArray<any>;
     fontAssets?: {
-        [key: string]: NodeRequire;
+        [key: string]: any;
     };
 }
 export interface ScreenshotData {
