@@ -1,3 +1,3 @@
-#!/usr/bin/env node
+#!/bin/bash
 
-cd ../client && npm run bundle
+cd node_modules/react-native-stargazer/client && npm run bundle
