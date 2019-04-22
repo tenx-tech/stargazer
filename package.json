@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Stargazer Control System",
   "author": "TenX",
-  "private": true,
+  "private": false,
+  "keywords": [],
+  "license": "ISC",
   "scripts": {
     "client": "cd client && npm start",
     "server": "cd server && npm start",
