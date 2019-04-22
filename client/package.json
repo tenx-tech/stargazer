@@ -3,6 +3,7 @@
   "description": "A React App which renders the static UI for Stargazer",
   "version": "0.0.1",
   "private": false,
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -11,7 +12,6 @@
     "tslint": "tslint --project tsconfig.json -c tslint.json",
     "tsc": "tsc",
     "test": "yarn prettier && yarn tslint && yarn tsc",
-    "bundle": "npm run build && mkdir -p ../../stargazer-ui && cp -a build/. ../../stargazer-ui",
     "eject": "react-scripts eject"
   },
   "dependencies": {
