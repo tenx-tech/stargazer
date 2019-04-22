@@ -13,7 +13,8 @@
     "test": "yarn prettier && yarn tslint && yarn tsc",
     "dev": "tsc-watch --onSuccess \"babel-node ./build/server.js\"",
     "start": "node ./build/server.js",
-    "build": "tsc && babel build -d build"
+    "compile": "tsc && babel build -d build",
+    "build": "webpack"
   },
   "dependencies": {
     "@types/express": "^4.16.1",
@@ -24,8 +25,11 @@
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "prettier": "^1.16.4",
+    "ts-loader": "^5.3.3",
     "tsc-watch": "^2.1.2",
     "tslint": "^5.13.1",
-    "tslint-immutable": "^5.3.2"
+    "tslint-immutable": "^5.3.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
   }
 }

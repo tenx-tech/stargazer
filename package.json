@@ -19,6 +19,6 @@
     "server": "cd server && npm start",
     "build": "cd client && npm run bundle",
     "prepublish": "cd server && npm run build && cd ../app && npm run build",
-    "postinstall": "cd app && npm install --production && cd ../client && npm install --production && cd ../server && npm install --production"
+    "postinstall": "cd app && npm install --production && cd ../client && npm install --production"
   }
 }
