@@ -9,6 +9,7 @@
   "main": "./app/lib/index.js",
   "types": "./app/lib/index.d.ts",
   "bin": {
+    "stargazer:run": "./bin/run.sh",
     "stargazer:client": "./bin/client.sh",
     "stargazer:server": "./bin/server.sh",
     "stargazer:build": "./bin/build.sh"
