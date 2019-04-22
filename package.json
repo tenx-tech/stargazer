@@ -8,6 +8,11 @@
   "license": "ISC",
   "main": "./app/lib/index.js",
   "types": "./app/lib/index.d.ts",
+  "bin": {
+    "client": "./bin/client",
+    "server": "./bin/server",
+    "build": "./bin/build"
+  },
   "scripts": {
     "client": "cd client && npm start",
     "server": "cd server && npm start",

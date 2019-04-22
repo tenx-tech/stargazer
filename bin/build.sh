@@ -1,0 +1,1 @@
+cd client && npm run bundle
