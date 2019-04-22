@@ -1,0 +1,36 @@
+{
+  "name": "stargazer-client",
+  "description": "A React App which renders the static UI for Stargazer",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "prettier": "prettier --list-different './src/**/*.{ts,tsx}'",
+    "prettier:fix": "prettier --write './src/**/*.{ts,tsx}'",
+    "tslint": "tslint --project tsconfig.json -c tslint.json",
+    "tsc": "tsc",
+    "test": "yarn prettier && yarn tslint && yarn tsc",
+    "bundle": "npm run build && mkdir -p ../../stargazer-ui && cp -a build/. ../../stargazer-ui",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5",
+    "typescript": "3.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "16.8.4",
+    "@types/react-dom": "16.8.2",
+    "prettier": "^1.16.4",
+    "tslint": "^5.12.1",
+    "tslint-immutable": "^5.3.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

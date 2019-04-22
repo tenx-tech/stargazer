@@ -1,0 +1,24 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-immutable"],
+  "jsRules": {},
+  "rules": {
+    "no-console": false,
+    "interface-name": false,
+    "readonly-keyword": false,
+    "no-empty-interface": false,
+    "readonly-array": true,
+    "max-classes-per-file": false,
+    "no-object-mutation": false,
+    "no-array-mutation": true,
+    "no-unused-expression": true,
+    "no-method-signature": false,
+    "no-delete": true,
+    "object-literal-sort-keys": false,
+    "prefer-readonly": false,
+    "member-access": [true, "no-public"],
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "semicolon": [true, "always", "ignore-bound-class-methods"]
+  },
+  "rulesDirectory": []
+}

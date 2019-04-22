@@ -1,0 +1,32 @@
+{
+  "name": "stargazer-server",
+  "version": "1.0.0",
+  "description": "Stargazer Satellite System",
+  "main": "server.js",
+  "author": "TenX",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "tsc": "tsc",
+    "prettier": "prettier --list-different './server.ts'",
+    "prettier:fix": "prettier --write './server.ts'",
+    "tslint": "tslint --project tsconfig.json -c tslint.json",
+    "test": "yarn prettier && yarn tslint && yarn tsc",
+    "start": "tsc-watch --onSuccess \"babel-node ./build/server.js\"",
+    "build": "tsc && \"babel-node ./build/server.js\"",
+    "postinstall": "tsc && babel build -d build"
+  },
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "babel-cli": "^6.26.0",
+    "express": "^4.16.4",
+    "typescript": "^3.3.4"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "prettier": "^1.16.4",
+    "tsc-watch": "^2.1.2",
+    "tslint": "^5.13.1",
+    "tslint-immutable": "^5.3.2"
+  }
+}
