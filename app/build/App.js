@@ -52,6 +52,11 @@ class Stargazer extends React.Component {
              */
             SCREENSHOTS = [];
         };
+        this.logger = (message) => {
+            if (!this.props.disableLogging) {
+                console.log(message);
+            }
+        };
         this.state = {
             loading: true,
         };
@@ -106,12 +111,6 @@ class Stargazer extends React.Component {
         catch (err) {
             console.log("Error fetching providing imageAssets - please check they match the expected format. Error:", err);
         }
-    }
-    logger(message) {
-        if (this.props.disableLogging) {
-            return;
-        }
-        console.log(message);
     }
 }
 /* =============================================================================

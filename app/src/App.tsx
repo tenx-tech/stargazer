@@ -177,12 +177,10 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     SCREENSHOTS = [];
   };
 
-  logger(message: string): void {
-    if (this.props.disableLogging) {
-      return;
+  logger = (message: string): void => {
+    if (!this.props.disableLogging) {
+      console.log(message);
     }
-
-    console.log(message);
   }
 }
 

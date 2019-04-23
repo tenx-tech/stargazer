@@ -29,6 +29,6 @@ declare class Stargazer extends React.Component<StargazerProps, IState> {
     preloadAssets(): Promise<void>;
     captureImage: (image: ScreenshotData, finalScreen: boolean) => Promise<void>;
     uploadImageData: () => Promise<void>;
-    logger(message: string): void;
+    logger: (message: string) => void;
 }
 export default Stargazer;
