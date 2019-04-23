@@ -32,9 +32,9 @@ const getStargazerRoutes = (
         <StartScreen
           logger={logger}
           autoStart={autoStart}
-          routesLength={routes.length}
           navigation={props.navigation}
           nextScreen={initialRouteName}
+          routesLength={Object.keys(routes).length}
         />
       ),
     },
