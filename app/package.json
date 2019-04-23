@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "Stargazer Application",
   "author": "TenX Team",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc --declaration",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
