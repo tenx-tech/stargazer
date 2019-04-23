@@ -1,3 +1,7 @@
+# Root level files
+.gitignore
+README.md
+
 # Ignore app src
 app/src
 app/tsconfig.json
