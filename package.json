@@ -18,6 +18,7 @@
     "client": "cd client && npm start",
     "server": "cd server && npm start",
     "build": "cd client && npm run build",
-    "test": "./test.sh"
+    "test": "./test.sh",
+    "prepublish": "npm run test"
   }
 }
