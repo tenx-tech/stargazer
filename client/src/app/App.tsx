@@ -1,26 +1,29 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-import ScreenshotData, {
-  getTimestamp,
+import logo from "../tenx_logo.png";
+import {
+  processScreenshotsData,
   ScreenshotItem,
-} from "../../client/src/data";
-import logo from "./tenx_logo.png";
+  ScreenshotsData,
+} from "./util";
 
 /* =============================================================================
 Types and Config
 ============================================================================= */
 
 interface IState {
+  error: boolean;
+  loading: boolean;
   search: string;
   desktop: boolean;
   names: ReadonlyArray<string>;
+  data: ReadonlyArray<ScreenshotItem>;
+  dates: {
+    ios: string;
+    android: string;
+  };
 }
-
-/**
- * Get dates for screenshots
- */
-const dates = getTimestamp();
 
 /**
  * Adjust for smaller screens
@@ -36,45 +39,49 @@ export default class extends Component<{}, IState> {
     super(props);
 
     this.state = {
+      dates: {
+        ios: "",
+        android: "",
+      },
       search: "",
+      data: [],
+      names: [],
+      error: false,
+      loading: true,
       desktop: isDesktop(),
-      names: ScreenshotData.map(({ name }) => name),
     };
   }
 
-  componentDidMount(): void {
+  async componentDidMount(): Promise<void> {
     window.addEventListener("resize", this.updateWindowDimensions);
+
+    this.fetchScreenshotsData();
   }
 
-  componentWillUnmount(): void {
-    window.removeEventListener("resize", this.updateWindowDimensions);
-  }
+  render(): JSX.Element | null {
+    if (this.state.loading) {
+      return null;
+    } else if (this.state.error) {
+      console.log("TODO: Handle error state!");
+      return null;
+    }
 
-  render(): JSX.Element {
     const DESKTOP = this.state.desktop;
     return (
       <div className="App">
         <header className="AppHeader">
           <img src={logo} className="AppLogo" alt="logo" />
-          <p className="HeaderTitle">TenX React Native Screen Browser</p>
-          {DESKTOP && (
-            <a
-              target="_blank"
-              className="GitHub"
-              rel="noopener noreferrer"
-              href="https://github.com/tenx-tech/tenx-react-native/issues/new?labels=design-feedback"
-            >
-              Open an Issue on GitHub
-            </a>
-          )}
+          <p className="HeaderTitle">Stargazer UI Testing System</p>
         </header>
         {DESKTOP && (
           <div className="TimestampBlock">
             <p>
-              iOS updated on <b>{dates.ios.toDateString()}</b>.
+              iOS updated on{" "}
+              <b>{new Date(this.state.dates.ios).toDateString()}</b>.
             </p>
             <p>
-              Android updated on <b>{dates.android.toDateString()}</b>.
+              Android updated on{" "}
+              <b>{new Date(this.state.dates.android).toDateString()}</b>.
             </p>
           </div>
         )}
@@ -83,7 +90,7 @@ export default class extends Component<{}, IState> {
             <div className="SearchBar">
               <input
                 autoFocus
-                placeholder={`Filter (${ScreenshotData.length} total screens)`}
+                placeholder={`Filter (${this.state.data.length} total screens)`}
                 className="SearchInput"
                 value={this.state.search}
                 onChange={this.handleSearch}
@@ -101,7 +108,7 @@ export default class extends Component<{}, IState> {
           className="ScreenshotContainer"
           style={{ paddingLeft: DESKTOP ? 300 : 0 }}
         >
-          {ScreenshotData.map(data => {
+          {this.state.data.map(data => {
             // @ts-ignore
             return this.renderScreenshotsItem(data);
           })}
@@ -189,5 +196,54 @@ export default class extends Component<{}, IState> {
 
   updateWindowDimensions = () => {
     this.setState({ desktop: isDesktop() });
+  };
+
+  fetchScreenshotsData = async () => {
+    const iosData = await this.fetchData("ios");
+    const androidData = await this.fetchData("android");
+
+    if (iosData && androidData) {
+      const processedData = processScreenshotsData(iosData, androidData);
+      this.setState({
+        loading: false,
+        data: processedData,
+        dates: {
+          ios: iosData.timestamp,
+          android: androidData.timestamp,
+        },
+        names: processedData.map(({ name }) => name),
+      });
+    } else {
+      console.log("Error fetching iOS and Android screenshots data!");
+      this.setErrorState();
+    }
+  };
+
+  fetchData = async (
+    source: "ios" | "android",
+  ): Promise<ScreenshotsData | void> => {
+    try {
+      const result = await fetch(
+        `${process.env.PUBLIC_URL}/screenshots/${source}-data.json`,
+      );
+      const json: ScreenshotsData = await result.json();
+      return json;
+    } catch (err) {
+      console.log(
+        `Could not fetch screenshots source JSON for device: ${source}`,
+      );
+      this.setErrorState();
+    }
+  };
+
+  componentWillUnmount(): void {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  setErrorState = () => {
+    this.setState({
+      error: true,
+      loading: false,
+    });
   };
 }
