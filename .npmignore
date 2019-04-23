@@ -1,0 +1,5 @@
+# Ignore app src
+app/src
+
+# Ignore server src
+server/server.ts
