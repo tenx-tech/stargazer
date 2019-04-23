@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * TODO: Check if these files don't exist and print warning messages.
+ */
 import Android_ScreenshotData from "./screenshots/android-data.json";
 import iOS_ScreenshotData from "./screenshots/ios-data.json";
 

@@ -1,8 +1,7 @@
 import { Permissions } from "expo";
 import React from "react";
-import { Button, Text } from "react-native";
+import { Button, Text, View } from "react-native";
 import { NavigationScreenProp } from "react-navigation";
-import styled from "styled-components/native";
 
 /* =============================================================================
 Types and Config
@@ -120,12 +119,16 @@ class StargazerStartScreen extends React.Component<IProps, IState> {
 Styles and Helpers
 ============================================================================= */
 
-const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  background-color: "rgb(242, 252, 255)";
-`;
+const Container = (props: { children: ReadonlyArray<JSX.Element> }) => (
+  <View style={{
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgb(242, 252, 255)",
+  }}>
+    {props.children}
+  </View>
+);
 
 const Title = (props: { children: string }) => {
   return (
