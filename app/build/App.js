@@ -67,7 +67,7 @@ class Stargazer extends React.Component {
             return <View style={{ flex: 1 }}/>;
         }
         const { routes, autoStart, initialRouteName } = this.props;
-        const Navigator = StargazerNavigator(routes, autoStart, this.logger, initialRouteName);
+        const Navigator = StargazerNavigator(routes, !!autoStart, this.logger, initialRouteName);
         return (<View style={{ flex: 1 }} collapsable={false} /* <- WIP! (Android) */ ref={ref => {
             /* tslint:disable-next-line */
             this.view = ref;

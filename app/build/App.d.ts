@@ -4,8 +4,8 @@ import { NavigationRouteConfigMap } from "react-navigation";
  * This will be the type definition we must export for this library.
  */
 export interface StargazerProps {
-    autoStart: boolean;
-    disableLogging: boolean;
+    autoStart?: boolean;
+    disableLogging?: boolean;
     stargazerServerUrl: string;
     routes: NavigationRouteConfigMap;
     initialRouteName: string;

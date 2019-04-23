@@ -13,8 +13,8 @@ Types and Config
  * This will be the type definition we must export for this library.
  */
 export interface StargazerProps {
-  autoStart: boolean;
-  disableLogging: boolean;
+  autoStart?: boolean;
+  disableLogging?: boolean;
   stargazerServerUrl: string;
   routes: NavigationRouteConfigMap;
   initialRouteName: string;
@@ -64,7 +64,7 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     const { routes, autoStart, initialRouteName } = this.props;
     const Navigator = StargazerNavigator(
       routes,
-      autoStart,
+      !!autoStart,
       this.logger,
       initialRouteName,
     );
