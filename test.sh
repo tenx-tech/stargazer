@@ -8,6 +8,7 @@ cd ../server
 npm test
 npm run build
 
-# Run client/ tests
+# Run client/ tests and build the project
 cd ../client
 npm test
+npm run build

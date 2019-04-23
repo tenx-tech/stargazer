@@ -9,10 +9,10 @@
   "main": "./app/build/index.js",
   "types": "./app/build/index.d.ts",
   "bin": {
-    "stargazer:run": "./bin/run",
-    "stargazer:client": "./bin/client",
-    "stargazer:server": "./bin/server",
-    "stargazer:build": "./bin/build"
+    "stargazer:run": "./bin/run.sh",
+    "stargazer:client": "./bin/client.sh",
+    "stargazer:server": "./bin/server.sh",
+    "stargazer:build": "./bin/build.sh"
   },
   "scripts": {
     "client": "cd client && npm start",
