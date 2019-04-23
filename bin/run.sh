@@ -1,3 +1,3 @@
 #!/bin/bash
 
-open stargazer-ui/index.html
+npm run serve stargazer-ui

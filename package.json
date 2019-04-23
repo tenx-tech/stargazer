@@ -20,5 +20,8 @@
     "build": "cd client && npm run build",
     "test": "./test.sh",
     "prepublish": "npm run test"
+  },
+  "dependencies": {
+    "serve": "^11.0.0"
   }
 }

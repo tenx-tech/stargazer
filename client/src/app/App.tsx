@@ -224,7 +224,7 @@ export default class extends Component<{}, IState> {
   ): Promise<ScreenshotsData | void> => {
     try {
       const result = await fetch(
-        `${process.env.PUBLIC_URL}/screenshots/${source}-data.json`,
+        `${process.env.PUBLIC_URL}/${source}-data.json`,
       );
       const json: ScreenshotsData = await result.json();
       return json;
