@@ -1,4 +1,4 @@
-# Stargazer
+# Stargazer 🔭
 
 Stargazer is a tool for manual testing UI regressions in a React Native/Expo app. It records screenshots of app screens and displays these in a browser UI for side-by-side comparison.
 

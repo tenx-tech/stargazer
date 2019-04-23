@@ -52,7 +52,10 @@ export const processScreenshotsData = (
     );
   }
 
-  if (iosData.data.photos.length === 0 && iosData.data.photos.length === 0) {
+  if (
+    iosData.data.photos.length === 0 &&
+    androidData.data.photos.length === 0
+  ) {
     throw new Error("No photo data exists!");
   }
 
