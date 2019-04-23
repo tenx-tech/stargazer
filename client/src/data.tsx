@@ -26,6 +26,26 @@ const ANDROID_SCREENSHOTS = Android_ScreenshotData as ScreenshotsData;
 const IOS_SCREENSHOTS = iOS_ScreenshotData as ScreenshotsData;
 
 /* =============================================================================
+Validation
+--------------------------------------------------------------------------------
+- Perform some initial validation on the input data.
+============================================================================= */
+
+{
+  if (ANDROID_SCREENSHOTS.data.photos.length === 0) {
+    console.warn(
+      `Found zero photos in the Android screenshots data, did you run the Stargazer tool first to record screenshots for your app?`
+    );
+  }
+
+  if (IOS_SCREENSHOTS.data.photos.length === 0) {
+    console.warn(
+      `Found zero photos in the iOS screenshots data, did you run the Stargazer tool first to record screenshots for your app?`
+    );
+  }
+}
+
+/* =============================================================================
 Helpers to process the screenshot data for rendering in the Photobooth App.
 ============================================================================= */
 

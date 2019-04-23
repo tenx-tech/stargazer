@@ -22,9 +22,9 @@ app.post("/screenshot", (request, response) => {
   try {
     const { body } = request;
 
-    const os = body.os;
+    const DEVICE_OS = body.os;
     const data = JSON.stringify({ data: body, timestamp: new Date() });
-    const path = `./client/src/screenshots/${os}-data.json`;
+    const path = `../client/src/screenshots/${DEVICE_OS}-data.json`;
 
     console.log(
       `Upload received, saving ${body.photos.length} ${
