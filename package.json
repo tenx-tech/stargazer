@@ -6,8 +6,8 @@
   "private": false,
   "keywords": [],
   "license": "ISC",
-  "main": "./app/lib/index.js",
-  "types": "./app/lib/index.d.ts",
+  "main": "./app/build/index.js",
+  "types": "./app/build/index.d.ts",
   "bin": {
     "stargazer:run": "./bin/run.sh",
     "stargazer:client": "./bin/client.sh",
@@ -17,7 +17,7 @@
   "scripts": {
     "client": "cd client && npm start",
     "server": "cd server && npm start",
-    "build": "cd client && npm run bundle",
+    "build": "cd client && npm run build",
     "prepublish": "cd server && npm run build && cd ../app && npm run build"
   }
 }
