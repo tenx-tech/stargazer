@@ -120,12 +120,14 @@ Styles and Helpers
 ============================================================================= */
 
 const Container = (props: { children: ReadonlyArray<JSX.Element> }) => (
-  <View style={{
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgb(242, 252, 255)",
-  }}>
+  <View
+    style={{
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "rgb(242, 252, 255)",
+    }}
+  >
     {props.children}
   </View>
 );

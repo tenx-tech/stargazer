@@ -39,7 +39,7 @@ const Placeholder = ({ height, width }: { height: number; width: number }) => (
     className="Placeholder"
     style={{
       height: height * IMAGE_RESIZE,
-      width: width * IMAGE_RESIZE,
+      width: width * IMAGE_RESIZE
     }}
   >
     <p className="PlaceholderText">No Image Yet</p>
@@ -72,7 +72,7 @@ const Data = new Map();
           src={screenshot}
           className="ScreenImage"
         />
-      ),
+      )
     });
   });
 }
@@ -98,7 +98,7 @@ const Data = new Map();
           src={screenshot}
           className="ScreenImage"
         />
-      ),
+      )
     });
   });
 }
@@ -122,8 +122,8 @@ export default Array.from(Data.entries()).map(([name, { ios, android }]) => {
           height={ANDROID_SCREENSHOTS.data.height * IMAGE_RESIZE}
           width={ANDROID_SCREENSHOTS.data.width * IMAGE_RESIZE}
         />
-      ),
-    },
+      )
+    }
   };
 
   return result;
@@ -136,6 +136,6 @@ export const getTimestamp = () => {
 
   return {
     ios,
-    android,
+    android
   };
 };

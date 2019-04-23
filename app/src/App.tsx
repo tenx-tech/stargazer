@@ -181,7 +181,7 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     if (!this.props.disableLogging) {
       console.log(message);
     }
-  }
+  };
 }
 
 /* =============================================================================
