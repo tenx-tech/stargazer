@@ -8,7 +8,7 @@ Root navigator for Stargazer App.
 export const STARGAZER_INIT = "STARGAZER_INIT";
 const getStargazerRoutes = (routes, autoStart, logger, initialRouteName) => {
     return Object.assign({ [STARGAZER_INIT]: {
-            screen: (props) => (<StartScreen logger={logger} autoStart={autoStart} routesLength={routes.length} navigation={props.navigation} nextScreen={initialRouteName}/>),
+            screen: (props) => (<StartScreen logger={logger} autoStart={autoStart} navigation={props.navigation} nextScreen={initialRouteName} routesLength={Object.keys(routes).length}/>),
         } }, routes);
 };
 /**

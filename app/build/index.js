@@ -1,4 +1,5 @@
 import Stargazer from "./App";
 import ScreenshotController from "./Screenshot";
-export { Stargazer, ScreenshotController, };
+export { ScreenshotController, };
+export default Stargazer;
 //# sourceMappingURL=index.js.map
