@@ -1,6 +1,7 @@
 # Root level files
 .gitignore
 README.md
+test.sh
 
 # Ignore app src
 app/src

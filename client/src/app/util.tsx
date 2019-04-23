@@ -52,6 +52,12 @@ export const processScreenshotsData = (
     );
   }
 
+  if (iosData.data.photos.length === 0 && iosData.data.photos.length === 0) {
+    throw new Error("No photo data exists!");
+  }
+
+  const placeholderDimensions = getPlaceholderDimensions(iosData, androidData);
+
   const Data = new Map();
 
   /**
@@ -96,8 +102,8 @@ export const processScreenshotsData = (
       Data.set(name, {
         ios: (entry && entry.ios) || (
           <Placeholder
-            height={iosData.data.height * IMAGE_RESIZE}
-            width={iosData.data.width * IMAGE_RESIZE}
+            height={placeholderDimensions.height * IMAGE_RESIZE}
+            width={placeholderDimensions.width * IMAGE_RESIZE}
           />
         ),
         [os]: (
@@ -124,8 +130,8 @@ export const processScreenshotsData = (
         ios,
         android: android || (
           <Placeholder
-            height={android.data.height * IMAGE_RESIZE}
-            width={android.data.width * IMAGE_RESIZE}
+            height={placeholderDimensions.height * IMAGE_RESIZE}
+            width={placeholderDimensions.width * IMAGE_RESIZE}
           />
         ),
       },
@@ -150,3 +156,23 @@ const Placeholder = ({ height, width }: { height: number; width: number }) => (
     <p className="PlaceholderText">No Image Yet</p>
   </div>
 );
+
+/**
+ * Get whichever dimensions exists. One of them will exist.
+ */
+const getPlaceholderDimensions = (
+  ios: ScreenshotsData,
+  android: ScreenshotsData,
+) => {
+  try {
+    return {
+      height: ios.data.height,
+      width: ios.data.width,
+    };
+  } catch (err) {
+    return {
+      height: android.data.height,
+      width: android.data.width,
+    };
+  }
+};
