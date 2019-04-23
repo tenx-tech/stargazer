@@ -147,27 +147,29 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     const { height, width } = Dimensions.get("window");
     this.logger(`\nUploading ${SCREENSHOTS.length} screenshots to server.`);
     try {
-      /**
-       * Must be IP address to work on the Android emulator.
-       */
-      await fetch(this.props.stargazerServerUrl, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          width,
-          height,
-          os: Platform.OS,
-          photos: SCREENSHOTS,
-        }),
-      });
+      await Promise.race([
+        timeoutUploadGuard(),
+        async () =>
+          fetch(this.props.stargazerServerUrl, {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              width,
+              height,
+              os: Platform.OS,
+              photos: SCREENSHOTS,
+            }),
+          }),
+      ]);
 
       this.logger("Upload complete! Stargazer shutting down.");
     } catch (err) {
-      this.logger(
-        "Upload failed... Did you set the STARGAZER_SERVER env (npm run stargazer:server) to be your computer's IP address in your .env file?",
+      console.log(
+        "Upload failed... Did you provide the correct stargazerServerUrl prop and run the Stargazer Server (npm run stargazer:server)? The stargazerServerUrl must be your current computer's IP address.",
+        err,
       );
     }
 
@@ -183,6 +185,23 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     }
   };
 }
+
+/**
+ * If a user provides an incorrect IP address the request will just hang for a long
+ * time and there will be no result. Eventually it will probably time out. We
+ * provide this 30 second time method to race against the fetch upload to try to catch
+ * this condition and warn the user.
+ */
+const timeoutUploadGuard = async () =>
+  new Promise((_, reject) =>
+    setTimeout(
+      () =>
+        reject(
+          "Uploaded timeout exceeded! Please double check the provided IP address in the stargazerServerUrl.",
+        ),
+      30 * 1000 /* Wait 30 seconds */,
+    ),
+  );
 
 /* =============================================================================
 Export
