@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "stargazer-app",
   "version": "1.0.0",
   "description": "Stargazer Application",
   "author": "TenX Team",
@@ -10,7 +10,7 @@
     "prettier:fix": "prettier --config .prettierrc --write './{src,test}/**/*.{ts,tsx}'",
     "prettier:check": "prettier --config .prettierrc --list-different './{src,test}/**/*.{ts,tsx}'",
     "format": "npm run prettier:fix && npm run tslint:fix",
-    "test": "npm run prettier:check && npm run tslint && npm run build"
+    "test": "npm run prettier:check && npm run tslint"
   },
   "dependencies": {
     "expo": "^32.0.0",

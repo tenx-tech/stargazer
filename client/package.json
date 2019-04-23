@@ -10,8 +10,10 @@
     "prettier": "prettier --list-different './src/**/*.{ts,tsx}'",
     "prettier:fix": "prettier --write './src/**/*.{ts,tsx}'",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
+    "tslint:fix": "tslint --project tsconfig.json -c tslint.json --fix",
+    "format": "npm run prettier:fix && npm run tslint:fix",
     "tsc": "tsc",
-    "test": "yarn prettier && yarn tslint && yarn tsc",
+    "test": "npm run prettier && npm run tslint && npm run tsc",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@
     "prettier": "prettier --list-different './server.ts'",
     "prettier:fix": "prettier --write './server.ts'",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
-    "test": "yarn prettier && yarn tslint && yarn tsc",
+    "test": "npm run prettier && npm run tslint && npm run tsc",
     "dev": "tsc-watch --onSuccess \"babel-node ./build/server.js\"",
     "start": "node ./build/server.js",
     "compile": "tsc && babel build -d build",
