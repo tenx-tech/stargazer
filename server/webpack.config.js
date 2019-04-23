@@ -1,23 +1,23 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './server.ts',
+  entry: "./index.ts",
   target: "node",
   mode: "production",
   module: {
     rules: [
       {
         test: /\.ts?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      }
-    ]
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: 'server.js',
-    path: path.resolve(__dirname, 'build')
+    filename: "index.js",
+    path: path.resolve(__dirname, "build"),
   },
 };
