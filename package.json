@@ -1,11 +1,18 @@
 {
   "name": "react-native-stargazer",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "Stargazer Control System",
   "author": "TenX",
   "private": false,
   "license": "ISC",
-  "keywords": [],
+  "keywords": [
+    "expo",
+    "react-native",
+    "testing",
+    "ui-testing",
+    "regression-testing",
+    "automated-testing"
+  ],
   "main": "./app/build/index.js",
   "types": "./app/build/index.d.ts",
   "bin": {

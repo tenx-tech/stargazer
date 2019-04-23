@@ -28,7 +28,7 @@ class Stargazer extends React.Component {
             try {
                 await Promise.race([
                     timeoutUploadGuard(),
-                    async () => fetch(this.props.stargazerServerUrl, {
+                    fetch(this.props.stargazerServerUrl, {
                         method: "POST",
                         headers: {
                             Accept: "application/json",
@@ -42,7 +42,7 @@ class Stargazer extends React.Component {
                         }),
                     }),
                 ]);
-                this.logger("Upload complete! Stargazer shutting down.");
+                this.logger("Upload complete!!! Stargazer idle.");
             }
             catch (err) {
                 console.log("Upload failed... Did you provide the correct stargazerServerUrl prop and run the Stargazer Server (npm run stargazer:server)? The stargazerServerUrl must be your current computer's IP address.", err);
@@ -119,7 +119,9 @@ class Stargazer extends React.Component {
  * provide this 30 second time method to race against the fetch upload to try to catch
  * this condition and warn the user.
  */
-const timeoutUploadGuard = async () => new Promise((_, reject) => setTimeout(() => reject("Uploaded timeout exceeded! Please double check the provided IP address in the stargazerServerUrl."), 30 * 1000 /* Wait 30 seconds */));
+const timeoutUploadGuard = async () => {
+    return new Promise((_, reject) => setTimeout(() => reject("Uploaded timeout exceeded! Please double check the provided IP address in the stargazerServerUrl."), 30 * 1000 /* Wait 30 seconds */));
+};
 /* =============================================================================
 Export
 ============================================================================= */
