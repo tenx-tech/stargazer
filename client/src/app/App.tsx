@@ -225,6 +225,12 @@ export default class extends Component<{}, IState> {
     try {
       const result = await fetch(
         `${process.env.PUBLIC_URL}/${source}-data.json`,
+        {
+          headers: {
+            pragma: "no-cache",
+            "cache-control": "no-cache",
+          },
+        },
       );
       const json: ScreenshotsData = await result.json();
       return json;

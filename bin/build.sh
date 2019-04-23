@@ -2,7 +2,8 @@
 
 cd node_modules/react-native-stargazer/client
 
-mkdir -p ../../../stargazer-ui
+rm -rf ../../../stargazer-ui
+mkdir ../../../stargazer-ui
 cp -a build/. ../../../stargazer-ui
 
 echo "Stargazer UI succesfully built!!!"
