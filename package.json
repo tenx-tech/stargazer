@@ -1,6 +1,6 @@
 {
   "name": "react-native-stargazer",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Stargazer Control System",
   "author": "TenX",
   "private": false,
@@ -18,7 +18,6 @@
     "client": "cd client && npm start",
     "server": "cd server && npm start",
     "build": "cd client && npm run bundle",
-    "prepublish": "cd server && npm run build && cd ../app && npm run build",
-    "postinstall": "cd ../client && npm install --production"
+    "prepublish": "cd server && npm run build && cd ../app && npm run build"
   }
 }

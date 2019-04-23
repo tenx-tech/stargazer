@@ -1,6 +1,10 @@
 #!/bin/bash
 
-cd node_modules/react-native-stargazer/client && npm run build
+cd node_modules/react-native-stargazer/client
+
+npm install
+npm run build
+
 mkdir -p ../../../stargazer-ui
 cp -a build/. ../../../stargazer-ui
 
