@@ -1,8 +1,11 @@
 {
   "name": "stargazer-client",
-  "description": "A React App which renders the static UI for Stargazer",
   "version": "0.0.1",
+  "description": "Stargazer Portal",
+  "author": "TenX",
   "private": false,
+  "license": "ISC",
+  "main": "src/index.tsx",
   "homepage": ".",
   "scripts": {
     "start": "react-scripts start",

@@ -1,11 +1,11 @@
 {
   "name": "react-native-stargazer",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Stargazer Control System",
   "author": "TenX",
   "private": false,
-  "keywords": [],
   "license": "ISC",
+  "keywords": [],
   "main": "./app/build/index.js",
   "types": "./app/build/index.d.ts",
   "bin": {

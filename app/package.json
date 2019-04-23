@@ -1,8 +1,11 @@
 {
-  "name": "stargazer-app",
-  "version": "1.0.0",
+  "name": "stargazer-application",
+  "version": "0.0.1",
   "description": "Stargazer Application",
-  "author": "TenX Team",
+  "author": "TenX",
+  "private": false,
+  "license": "ISC",
+  "main": "app/index.ts",
   "scripts": {
     "build": "tsc --declaration",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
@@ -12,13 +15,11 @@
     "format": "npm run prettier:fix && npm run tslint:fix",
     "test": "npm run prettier:check && npm run tslint"
   },
-  "dependencies": {
+  "devDependencies": {
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-navigation": "^3.0.9"
-  },
-  "devDependencies": {
+    "react-navigation": "^3.0.9",
     "@types/expo": "^31.0.8",
     "@types/react": "16.4.7",
     "@types/react-native": "^0.55.17",
