@@ -62,8 +62,11 @@ export default (
 getStackNavigatorConfig utils:
 ============================================================================= */
 
+/**
+ * TODO: Do we need to make these configurable?
+ */
 const LIGHT = "rgb(255, 255, 255)";
-const DARK = "rgb(0, 21, 32)";
+// const DARK = "rgb(0, 21, 32)";
 
 /**
  * Custom navigation animation settings to slide a screen in
@@ -76,7 +79,7 @@ const DARK = "rgb(0, 21, 32)";
 const transitionConfig = (): TransitionConfig => {
   return {
     containerStyle: {
-      backgroundColor: DARK,
+      backgroundColor: LIGHT,
     },
     transitionSpec: {
       duration: 300,
@@ -130,7 +133,7 @@ export const getStackNavigatorConfig = (
   defaultNavigationOptions: transparentHeaderOptions,
   cardStyle: {
     opacity: 1,
-    backgroundColor: DARK,
+    backgroundColor: LIGHT,
   },
   transitionConfig: Platform.OS === "ios" ? undefined : transitionConfig, // Use "native-like" transition on iOS
 });

@@ -1,7 +1,8 @@
+import React from "react";
 import { ScreenshotController } from "react-native-stargazer";
 
 import { FirstScreen, SecondScreen, ThirdScreen } from "./Screens";
-import AppRoutes from "./AppRoutes";
+import AppRoutes, { SCREEN_NAMES } from "./AppRoutes";
 
 /** =======================================================
  * Stargazer Route Config
@@ -9,33 +10,56 @@ import AppRoutes from "./AppRoutes";
  */
 
 const StargazerRouteConfig = {
-  FIRST_SCREEN: {
+  [SCREEN_NAMES.FIRST_SCREEN]: {
     screen: props => {
       return (
-        <ScreenshotController name="First Screen" nextScreen="SECOND_SCREEN">
+        <ScreenshotController
+          name="First Screen"
+          {...renderPropsHelper(props)}
+          nextScreen={SCREEN_NAMES.SECOND_SCREEN}
+        >
           <FirstScreen navigation={props.navigation} />
         </ScreenshotController>
       );
     }
   },
-  SECOND_SCREEN: {
+  [SCREEN_NAMES.SECOND_SCREEN]: {
     screen: props => {
       return (
-        <ScreenshotController name="Second Screen" nextScreen="THIRD_SCREEN">
+        <ScreenshotController
+          name="Second Screen"
+          {...renderPropsHelper(props)}
+          nextScreen={SCREEN_NAMES.THIRD_SCREEN}
+        >
           <SecondScreen navigation={props.navigation} />
         </ScreenshotController>
       );
     }
   },
-  THIRD_SCREEN: {
+  [SCREEN_NAMES.THIRD_SCREEN]: {
     screen: props => {
       return (
-        <ScreenshotController finalScreen name="Third Screen">
+        <ScreenshotController
+          finalScreen
+          name="Third Screen"
+          {...renderPropsHelper(props)}
+        >
           <ThirdScreen navigation={props.navigation} />
         </ScreenshotController>
       );
     }
   }
+};
+
+/**
+ * TODO: Import this function!
+ */
+const renderPropsHelper = props => {
+  return {
+    navigation: props.navigation,
+    viewRef: props.screenProps.viewRef,
+    captureImage: props.screenProps.captureImage
+  };
 };
 
 /**

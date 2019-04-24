@@ -1,26 +1,38 @@
 import { ThirdScreen, SecondScreen, FirstScreen } from "./Screens";
 
 /* =============================================================================
+Screen Names:
+============================================================================= */
+
+const SCREEN_NAMES = {
+  FIRST_SCREEN: "FIRST_SCREEN",
+  SECOND_SCREEN: "SECOND_SCREEN",
+  THIRD_SCREEN: "THIRD_SCREEN"
+};
+
+/* =============================================================================
 React Navigation Route Config
 ============================================================================= */
 
 const AppRouteConfig = {
-  [ScreenNames.LOGIN_EMAIL]: {
+  [SCREEN_NAMES.FIRST_SCREEN]: {
     screen: FirstScreen,
-    navigationOptions: getDefaultNavigationOptions({ title: "First Screen!" })
+    navigationOptions: { title: "First Screen!" }
   },
-  [ScreenNames.LOGIN_PASSWORD]: {
+  [SCREEN_NAMES.SECOND_SCREEN]: {
     screen: SecondScreen,
-    navigationOptions: getDefaultNavigationOptions({ title: "Second Screen!" })
+    navigationOptions: { title: "Second Screen!" }
   },
-  [ScreenNames.LOGIN_PASSWORD]: {
+  [SCREEN_NAMES.THIRD_SCREEN]: {
     screen: ThirdScreen,
-    navigationOptions: getDefaultNavigationOptions({ title: "Third Screen!" })
+    navigationOptions: { title: "Third Screen!" }
   }
 };
 
 /* =============================================================================
 Export
 ============================================================================= */
+
+export { SCREEN_NAMES };
 
 export default AppRouteConfig;

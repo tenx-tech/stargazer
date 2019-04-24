@@ -2,6 +2,7 @@ import React from "react";
 import Stargazer from "react-native-stargazer";
 
 import routes from "./src/StargazerRouteConfig";
+import { SCREEN_NAMES } from "./src/AppRoutes";
 
 /**
  * Set this to your local IP:
@@ -13,8 +14,8 @@ export default class App extends React.Component {
     return (
       <Stargazer
         routes={routes}
-        initialRouteName="FIRST_SCREEN"
         stargazerServerUrl={STARGAZER_SERVER_URL}
+        initialRouteName={SCREEN_NAMES.FIRST_SCREEN}
       />
     );
   }
