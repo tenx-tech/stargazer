@@ -1,13 +1,23 @@
 import { Asset, Font } from "expo";
 import React from "react";
 import { Dimensions, Platform, View } from "react-native";
-import { NavigationRouteConfigMap } from "react-navigation";
+import {
+  NavigationRouteConfig,
+  NavigationRouteConfigMap,
+} from "react-navigation";
 
 import StargazerNavigator from "./Navigator";
+import { processRouteConfig } from "./utils";
 
 /* =============================================================================
 Types and Config
 ============================================================================= */
+
+export interface StargazerRouteConfigObject extends NavigationRouteConfig {
+  name: string;
+  screenName: string;
+  paramsForNextScreen?: { [key: string]: any };
+}
 
 /**
  * This will be the type definition we must export for this library.
@@ -16,8 +26,8 @@ export interface StargazerProps {
   autoStart?: boolean;
   disableLogging?: boolean;
   stargazerServerUrl: string;
-  routes: NavigationRouteConfigMap;
-  initialRouteName: string;
+  routeConfig: ReadonlyArray<StargazerRouteConfigObject>;
+  appRouteConfig?: NavigationRouteConfigMap;
   imageAssets?: ReadonlyArray<any>;
   fontAssets?: { [key: string]: any };
 }
@@ -61,10 +71,14 @@ class Stargazer extends React.Component<StargazerProps, IState> {
       return <View style={{ flex: 1 }} />;
     }
 
-    const { routes, autoStart, initialRouteName } = this.props;
+    const { routeConfig, appRouteConfig, autoStart } = this.props;
+    const routes = processRouteConfig(routeConfig, appRouteConfig);
+
+    const initialRouteName = routeConfig[0].screenName;
+
     const Navigator = StargazerNavigator(
       routes,
-      !!autoStart,
+      Boolean(autoStart),
       this.logger,
       initialRouteName,
     );
