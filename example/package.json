@@ -5,17 +5,22 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "stargazer": "ttab 'npm start' && npm run stargazer:server",
+    "stargazer:run": "stargazer:run",
+    "stargazer:server": "stargazer:server",
+    "stargazer:build": "stargazer:build"
   },
   "dependencies": {
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-stargazer": "0.0.37",
+    "react-native-stargazer": "0.0.38",
     "react-navigation": "^3.9.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "ttab": "^0.6.1"
   },
   "private": false
 }

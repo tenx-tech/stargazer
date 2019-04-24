@@ -7,7 +7,7 @@ import { SCREEN_NAMES } from "./src/AppRoutes";
 /**
  * Set this to your local IP:
  */
-const STARGAZER_SERVER_URL = "";
+const STARGAZER_SERVER_URL = "http://192.168.1.113:9000/screenshot";
 
 export default class App extends React.Component {
   render() {
