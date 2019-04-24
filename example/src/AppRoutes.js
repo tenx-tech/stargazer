@@ -1,4 +1,4 @@
-import { ThirdScreen, SecondScreen, FirstScreen } from "./FirstScreen";
+import { ThirdScreen, SecondScreen, FirstScreen } from "./Screens";
 
 /* =============================================================================
 React Navigation Route Config

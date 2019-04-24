@@ -1,5 +1,6 @@
 import { ScreenshotController } from "react-native-stargazer";
-import { FirstScreen, SecondScreen, ThirdScreen } from "./FirstScreen";
+
+import { FirstScreen, SecondScreen, ThirdScreen } from "./Screens";
 import AppRoutes from "./AppRoutes";
 
 /** =======================================================

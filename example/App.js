@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import Stargazer from "react-native-stargazer";
 
 import routes from "./src/StargazerRouteConfig";
