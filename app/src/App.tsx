@@ -7,7 +7,7 @@ import {
 } from "react-navigation";
 
 import StargazerNavigator from "./Navigator";
-import { processRouteConfig } from "./utils";
+import { mapRouteConfigToStargazerRouteMap } from "./utils";
 
 /* =============================================================================
 Types and Config
@@ -72,7 +72,10 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     }
 
     const { routeConfig, appRouteConfig, autoStart } = this.props;
-    const routes = processRouteConfig(routeConfig, appRouteConfig);
+    const routes = mapRouteConfigToStargazerRouteMap(
+      routeConfig,
+      appRouteConfig,
+    );
 
     const initialRouteName = routeConfig[0].screenName;
 
