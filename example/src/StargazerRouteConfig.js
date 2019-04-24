@@ -12,17 +12,17 @@ const StargazerRouteConfig = [
   {
     name: "First Screen",
     screenName: SCREEN_NAMES.FIRST_SCREEN,
-    screen: <FirstScreen navigation={props.navigation} />
+    screen: <FirstScreen />
   },
   {
     name: "Second Screen",
     screenName: SCREEN_NAMES.SECOND_SCREEN,
-    screen: <SecondScreen navigation={props.navigation} />
+    screen: <SecondScreen />
   },
   {
     name: "Third Screen",
     screenName: SCREEN_NAMES.THIRD_SCREEN,
-    screen: <ThirdScreen navigation={props.navigation} />
+    screen: <ThirdScreen />
   }
 ];
 

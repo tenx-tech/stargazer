@@ -15,14 +15,23 @@ export const processRouteConfig = (
 ): NavigationRouteConfigMap => {
   return routeConfig.reduce(
     (finalConfig, stargazerRouteConfig, currentIndex) => {
-      const screenName = stargazerRouteConfig[currentIndex].screenName;
-      const nextScreenName = stargazerRouteConfig[currentIndex + 1].screenName;
+      const screenName = routeConfig[currentIndex].screenName;
+      const nextScreenName = routeConfig[currentIndex + 1].screenName;
 
       const RouteScreenComponent = stargazerRouteConfig.screen;
 
-      const originalNavigationOptions = appRouteConfig
-        ? appRouteConfig[stargazerRouteConfig.name].navigationOptions
-        : {};
+      let defaultNavigationOptions = {};
+
+      if (appRouteConfig && screenName in appRouteConfig) {
+        if (appRouteConfig[screenName].navigationOptions !== undefined) {
+          defaultNavigationOptions =
+            appRouteConfig[screenName].navigationOptions;
+        }
+      } else {
+        console.warn(
+          `Received screenName ${screenName} in routeConfig but no matching screenName exists in appRouteConfig. Is this a mistake? You should use matching screenNames in the Stargazer route config.`,
+        );
+      }
 
       const configObject = {
         screen: (props: any) => {
@@ -39,7 +48,7 @@ export const processRouteConfig = (
         },
         navigationOptions: stargazerRouteConfig.navigationOptions
           ? stargazerRouteConfig.navigationOptions
-          : originalNavigationOptions,
+          : defaultNavigationOptions,
       };
 
       // tslint:disable-next-line
