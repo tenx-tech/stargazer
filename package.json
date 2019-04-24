@@ -22,12 +22,11 @@
     "stargazer:build": "./bin/build.sh"
   },
   "scripts": {
-    "setup": "npm install && npm run install-packages",
-    "install-packages": "cd app && npm install && cd ../client && npm install && cd ../server && npm install",
+    "setup": "npm install && bash ./scripts/setup.sh",
     "client": "cd client && npm start",
     "server": "cd server && npm start",
     "build": "cd client && npm run build",
-    "test": "./test.sh",
+    "test": "bash ./scripts/test.sh",
     "prepublishOnly": "npm run test"
   },
   "dependencies": {

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Run app/ tests and build the project
 cd app
 npm test
