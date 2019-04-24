@@ -14,7 +14,7 @@
     "prettier": "prettier --list-different './index.ts'",
     "prettier:fix": "prettier --write './index.ts'",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
-    "test": "npm run prettier && npm run tslint && npm run tsc",
+    "test": "npm run prettier && npm run tslint",
     "dev": "tsc-watch --onSuccess \"babel-node ./build/index.js\"",
     "start": "node ./build/index.js",
     "compile": "tsc && babel build -d build",

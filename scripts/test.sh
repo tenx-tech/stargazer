@@ -1,16 +1,27 @@
 #!/bin/bash
 
-# Run app/ tests and build the project
+echo "Preparing to project tests:"
+
+# Run app/ tests
+echo ""
+echo "- Running app/ tests ~~~"
+echo ""
+
 cd app
 npm test
-npm run build
 
-# Run server/ tests and build the project
-cd ../server
-npm test
-npm run build
+# Run client/ tests
+echo ""
+echo "- Running client/ tests ~~~"
+echo ""
 
-# Run client/ tests and build the project
 cd ../client
 npm test
-npm run build
+
+# Run server/ tests
+echo ""
+echo "- Running server/ tests ~~~"
+echo ""
+
+cd ../server
+npm test
