@@ -18,8 +18,11 @@ export default (routes, autoStart, logger, initialRouteName) => createAppContain
 /* =============================================================================
 getStackNavigatorConfig utils:
 ============================================================================= */
+/**
+ * TODO: Do we need to make these configurable?
+ */
 const LIGHT = "rgb(255, 255, 255)";
-const DARK = "rgb(0, 21, 32)";
+// const DARK = "rgb(0, 21, 32)";
 /**
  * Custom navigation animation settings to slide a screen in
  * from right to left. This animation is more fluid and faster
@@ -31,7 +34,7 @@ const DARK = "rgb(0, 21, 32)";
 const transitionConfig = () => {
     return {
         containerStyle: {
-            backgroundColor: DARK,
+            backgroundColor: LIGHT,
         },
         transitionSpec: {
             duration: 300,
@@ -78,7 +81,7 @@ export const getStackNavigatorConfig = (initialRouteName) => ({
     defaultNavigationOptions: transparentHeaderOptions,
     cardStyle: {
         opacity: 1,
-        backgroundColor: DARK,
+        backgroundColor: LIGHT,
     },
     transitionConfig: Platform.OS === "ios" ? undefined : transitionConfig,
 });
