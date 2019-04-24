@@ -161,38 +161,48 @@ class Stargazer extends React.Component<StargazerProps, IState> {
   };
 
   uploadImageData = async () => {
-    const { height, width } = Dimensions.get("window");
-    this.logger(`\nUploading ${SCREENSHOTS.length} screenshots to server.`);
     try {
-      await Promise.race([
-        timeoutUploadGuard(),
-        fetch(this.props.stargazerServerUrl, {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            width,
-            height,
-            os: Platform.OS,
-            photos: SCREENSHOTS,
-          }),
-        }),
-      ]);
-
-      this.logger("Upload complete!!! Stargazer idle.");
+      await Promise.race([timeoutUploadSafeguard(), this.postScreenshots()]);
     } catch (err) {
-      console.log(
-        "Upload failed... Did you provide the correct stargazerServerUrl prop and run the Stargazer Server (npm run stargazer:server)? The stargazerServerUrl must be your current computer's IP address.",
-        err,
-      );
+      console.log(err);
     }
 
     /**
      * Reset screenshots array.
      */
     SCREENSHOTS = [];
+  };
+
+  postScreenshots = async () => {
+    const { height, width } = Dimensions.get("window");
+    this.logger(
+      `\nUploading ${
+        SCREENSHOTS.length
+      } screenshots to Stargazer Server at URL: ${
+        this.props.stargazerServerUrl
+      }`,
+    );
+    try {
+      await fetch(this.props.stargazerServerUrl, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          width,
+          height,
+          os: Platform.OS,
+          photos: SCREENSHOTS,
+        }),
+      });
+      this.logger("Upload complete!!! Stargazer idle 🔭");
+    } catch (err) {
+      console.log(
+        "Upload failed... Did you provide the correct stargazerServerUrl prop and run the Stargazer Server (npm run stargazer:server)? The stargazerServerUrl must be your current computer's IP address.",
+        err,
+      );
+    }
   };
 
   logger = (message: string): void => {
@@ -208,7 +218,7 @@ class Stargazer extends React.Component<StargazerProps, IState> {
  * provide this 30 second time method to race against the fetch upload to try to catch
  * this condition and warn the user.
  */
-const timeoutUploadGuard = async () => {
+const timeoutUploadSafeguard = async () => {
   return new Promise((_, reject) =>
     setTimeout(
       () =>
