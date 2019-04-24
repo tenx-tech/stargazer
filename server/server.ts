@@ -24,7 +24,7 @@ app.post("/screenshot", (request, response) => {
 
     const DEVICE_OS = body.os;
     const data = JSON.stringify({ data: body, timestamp: new Date() });
-    const path = `../client/build/${DEVICE_OS}-data.json`;
+    const path = `../../../../stargazer-ui/${DEVICE_OS}-data.json`;
 
     console.log(
       `Upload received, saving ${body.photos.length} ${
