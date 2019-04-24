@@ -2,30 +2,39 @@
 
 cd node_modules/react-native-stargazer/client
 
+# Create tmp folder to store any existing screenshot files
 mkdir tmp
 
 IOS=../../../stargazer-ui/ios-data.json
 ANDROID=../../../stargazer-ui/android-data.json
 
 if [ -f $IOS ]; then
-  cp "$IOS" tmp
+  cp $IOS tmp
 fi
 
 if [ -f $ANDROID ]; then
-  cp "$ANDROID" tmp
+  cp $ANDROID tmp
 fi
 
+# Remove existing stargazer-ui folder and copy current build output
 rm -rf ../../../stargazer-ui
 mkdir ../../../stargazer-ui
 cp -a build/. ../../../stargazer-ui
 
-if [ -f tmp/ios-data.json ]; then
-  cp tmp/ios-data.json $IOS
+# Copy existing screenshot files if they existed back to stargazer-ui
+IOS_TEMP=tmp/ios-data.json
+ANDROID_TEMP=tmp/android-data.json
+
+if [ -f $IOS_TEMP ]; then
+  cp $IOS_TEMP $IOS
 fi
 
-if [ -f tmp/android-data.json ]; then
-  cp tmp/android-data.json $ANDROID
+if [ -f $ANDROID_TEMP ]; then
+  cp $ANDROID_TEMP $ANDROID
 fi
+
+# Remove the tmp folder
+rm -rf tmp
 
 echo "Stargazer UI succesfully built!!!"
 echo ""

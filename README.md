@@ -103,6 +103,8 @@ Now, you can add these scripts to your project's `package.json`:
 
 Now run `npm run stagazer:init`. This will build the output browser UI project directly into your source repository. This is simply the production build output of a Create React App which is used to render the recorded screenshots. You can check this into your source code to then deploy it and host it anywhere, or just view the screenshots locally in any development environment. Or, if you prefer to not to you can just `.gitignore` this output folder.
 
+If this output UI browser ever changes in a version of `react-native-stargazer` you can simply re-run the `init` command to get a new version of the UI browser bundled output (any existing screenshot data should be preserved if it existed).
+
 Now run `npm run stargazer:server` and then launch your app in another terminal tab with Expo. When you app loads on a device you should see a screen welcoming your to Stargazer. Press the blue button to start running the recording tool. Once it's finished, it will automatically upload the recorded screenshots to the `stargazer-ui` folder in your project directory.
 
 ### Example
@@ -112,3 +114,5 @@ There is an example app in the `example/` folder [here](https://github.com/tenx-
 ### Contributing
 
 We welcome any changes, requests, features, improvements, or bug fixes with pull requests or welcome anyone interesting in more substantial changes to fork the library. We follow a normal git workflow process where pull requests can be reviewed and merged with approving reviews.
+
+In general, we would like to keep the scope of this project fairly contained and avoid any major feature requests or changes.
