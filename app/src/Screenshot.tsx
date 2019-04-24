@@ -74,21 +74,13 @@ class ScreenshotController extends React.Component<
 
     /**
      * Capture screenshot with Expo snapshot tool.
-     *
-     * NOTE: Taking 30% of the height/width reduces the screenshot size
-     * considerably, which is important because the current design of this tool
-     * loads ALL the screenshots in one array in memory (here, and in the browser
-     * UI which displays the results). Having full resolution images were simply
-     * TOO large and could causes Node JS runtime to run out of memory (mainly in CI).
-     * Reduces the image size here avoids this issue, and probably will avoid it
-     * unless the app has 100s of screens in the future.
      */
     const result = await takeSnapshotAsync(viewRef(), {
-      result: "data-uri",
-      format: "png",
+      width,
+      height,
       quality: 1,
-      width: Platform.OS === "ios" ? 0.6 * width : width,
-      height: Platform.OS === "ios" ? 0.6 * height : height,
+      format: "png",
+      result: "data-uri",
     });
 
     /**

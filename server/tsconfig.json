@@ -17,5 +17,5 @@
     "outDir": "build",
     "jsx": "preserve"
   },
-  "include": ["index.ts"]
+  "include": ["server.ts"]
 }

@@ -13,7 +13,7 @@
     "regression-testing",
     "automated-testing"
   ],
-  "main": "./app/build/index.js",
+  "main": "./app/build/server.js",
   "types": "./app/build/index.d.ts",
   "repository": {
     "type": "git",
