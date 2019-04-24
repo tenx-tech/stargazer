@@ -2,6 +2,8 @@
 
 cd node_modules/react-native-stargazer/client
 
+# TODO: Do not overwrite screenshot data if it exists?
+
 rm -rf ../../../stargazer-ui
 mkdir ../../../stargazer-ui
 cp -a build/. ../../../stargazer-ui

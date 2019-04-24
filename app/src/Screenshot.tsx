@@ -1,6 +1,6 @@
 import { takeSnapshotAsync } from "expo";
 import React from "react";
-import { Dimensions, Platform, View } from "react-native";
+import { Dimensions, View } from "react-native";
 import {
   NavigationActions,
   NavigationScreenProp,
