@@ -1,21 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import Stargazer from "react-native-stargazer";
+
+import routes from "./src/StargazerRouteConfig";
+
+/**
+ * Set this to your local IP:
+ */
+const STARGAZER_SERVER_URL = "";
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Stargazer
+        routes={routes}
+        initialRouteName="FIRST_SCREEN"
+        stargazerServerUrl={STARGAZER_SERVER_URL}
+      />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
