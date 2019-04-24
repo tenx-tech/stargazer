@@ -7,9 +7,6 @@ export interface StargazerRouteConfigObject extends NavigationRouteConfig {
         [key: string]: any;
     };
 }
-/**
- * This will be the type definition we must export for this library.
- */
 export interface StargazerProps {
     autoStart?: boolean;
     disableLogging?: boolean;
@@ -36,6 +33,7 @@ declare class Stargazer extends React.Component<StargazerProps, IState> {
     preloadAssets(): Promise<void>;
     captureImage: (image: ScreenshotData, finalScreen: boolean) => Promise<void>;
     uploadImageData: () => Promise<void>;
+    postScreenshots: () => Promise<void>;
     logger: (message: string) => void;
 }
 export default Stargazer;
