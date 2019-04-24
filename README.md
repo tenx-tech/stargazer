@@ -33,5 +33,3 @@ To use this tool in your app first install it with `npm install --save react-nat
 6) Once the screen uploads are finished, stop the Expo and Stargazer servers.
 7) Run the command `npm run stargazer:build` to build the UI browser output.
 8) You should now have a folder in your project source repo: `stargazer-ui`. This contains the bundled browser UI app. You can preview it with the command `npm run stargazer:run`, or deploy it to host for your team or organization.
-
-**TODO:** Improve documentation.
