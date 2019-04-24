@@ -7,7 +7,8 @@ import appRoutes from "./src/AppRoutes";
 /**
  * Set this to your local IP:
  */
-const STARGAZER_SERVER_URL = "http://192.168.1.113:9000/screenshot";
+const IP = "10.8.0.112"; /* <-- Add your IP address here! */
+const STARGAZER_SERVER_URL = `http://${IP}:9000/screenshot`;
 
 export default class App extends React.Component {
   render() {
