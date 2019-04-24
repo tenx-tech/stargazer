@@ -1,5 +1,7 @@
+import React from "react";
 import { NavigationRouteConfigMap } from "react-navigation";
-import { ScreenshotController } from ".";
+
+import ScreenshotController from "./Screenshot";
 
 const renderPropsHelper = (props: any) => {
   return {
@@ -16,7 +18,10 @@ export const processRouteConfig = (
   return routeConfig.reduce(
     (finalConfig, stargazerRouteConfig, currentIndex) => {
       const screenName = routeConfig[currentIndex].screenName;
-      const nextScreenName = routeConfig[currentIndex + 1].screenName;
+      const nextScreenName =
+        currentIndex < routeConfig.length - 1
+          ? routeConfig[currentIndex + 1].screenName
+          : undefined;
 
       const RouteScreenComponent = stargazerRouteConfig.screen;
 
