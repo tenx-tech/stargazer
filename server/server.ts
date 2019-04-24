@@ -7,6 +7,9 @@ Express Server to handle uploading screenshots and saving to a JSON file for
 the Stargazer App.
 ============================================================================= */
 
+const PORT = 9000;
+const STARGAZER_PATH = "../../../../stargazer-ui";
+
 const app = express();
 
 /**
@@ -28,7 +31,7 @@ app.post("/screenshot", (request, response) => {
     /**
      * TODO: Check if stargazer-ui folder exists yet? Maybe check when server starts up.
      */
-    const path = `../../../../stargazer-ui/${DEVICE_OS}-data.json`;
+    const path = `${STARGAZER_PATH}/${DEVICE_OS}-data.json`;
 
     console.log(
       `Upload received, saving ${body.photos.length} ${
@@ -48,20 +51,33 @@ app.post("/screenshot", (request, response) => {
       return response.sendStatus(200);
     });
   } catch (err) {
-    console.log(err);
+    console.log("Upload failure, err: ", err);
     return response.sendStatus(500);
   }
 });
 
+{
+  if (!fs.existsSync(STARGAZER_PATH)) {
+    console.log(
+      `\nWARNING: There seems to be no Stargazer folder found in your project root level...`,
+    );
+    console.log(
+      `- If you just installed Stargazer, run the 'stargazer:init' command to create this folder.`,
+    );
+  }
+}
+
 /**
  * Run the server.
  */
-const PORT = 9000;
-
-app.listen(PORT, () =>
+app.listen(PORT, () => {
   console.log(
     "\x1b[33m%s\x1b[0m",
-    `\nStargazer Satellite System launched from port ${PORT}!\n\n` +
-      `Run the Stargazer App in an Android or iOS simulator to record app screenshots.\n`,
-  ),
-);
+    `\nStargazer Satellite System launched from port ${PORT}!!! 🔭\n`,
+  );
+  console.log(
+    "\x1b[33m%s\x1b[0m",
+    "- Run the Stargazer App in an Android or iOS simulator to record screenshots of your React Native app.\n" +
+      "- Be sure to use your computer IP when setting the stargazerServerUrl for your app.",
+  );
+});
