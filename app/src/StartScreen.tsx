@@ -94,9 +94,9 @@ class StargazerStartScreen extends React.Component<IProps, IState> {
 
   start = () => {
     this.props.logger(
-      `Initializing Stargazer app... Ready to record ${
+      `\nInitializing Stargazer App... Ready to record ${
         this.props.routesLength
-      } routes`,
+      } routes 🔭`,
     );
     this.setState(
       {
