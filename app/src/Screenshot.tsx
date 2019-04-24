@@ -87,8 +87,8 @@ class ScreenshotController extends React.Component<
       result: "data-uri",
       format: "png",
       quality: 1,
-      width: Platform.OS === "ios" ? 0.3 * width : width,
-      height: Platform.OS === "ios" ? 0.3 * height : height,
+      width: Platform.OS === "ios" ? 0.6 * width : width,
+      height: Platform.OS === "ios" ? 0.6 * height : height,
     });
 
     /**
