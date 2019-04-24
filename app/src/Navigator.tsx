@@ -34,7 +34,7 @@ const getStargazerRoutes = (
           autoStart={autoStart}
           navigation={props.navigation}
           nextScreen={initialRouteName}
-          routesLength={routes.length}
+          routesLength={Object.keys(routes).length}
         />
       ),
     },

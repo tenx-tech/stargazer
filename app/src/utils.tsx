@@ -43,9 +43,9 @@ export const processRouteConfig = (
           return (
             <ScreenshotController
               {...renderPropsHelper(props)}
+              nextScreen={nextScreenName}
               name={stargazerRouteConfig.name}
               finalScreen={nextScreenName === undefined}
-              nextScreen={stargazerRouteConfig.nextScreenName}
             >
               <RouteScreenComponent navigation={props.navigation} />
             </ScreenshotController>
