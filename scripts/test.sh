@@ -25,3 +25,7 @@ echo ""
 
 cd ../server
 npm test
+
+echo "All tests passed!"
+echo "NOTE: If publishing updates to the client UI browser, you must run a build manually with 'npm run build'"
+echo ""
