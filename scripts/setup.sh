@@ -5,18 +5,18 @@ echo "Install app/ dependencies ~~~"
 echo ""
 
 cd app
-npm ci
+npm install
 
 echo ""
 echo "Install client/ dependencies ~~~"
 echo ""
 
 cd ../client
-npm ci
+npm install
 
 echo ""
 echo "Install server/ dependencies ~~~"
 echo ""
 
 cd ../server
-npm ci
+npm install
