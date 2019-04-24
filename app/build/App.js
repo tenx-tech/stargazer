@@ -2,6 +2,7 @@ import { Asset, Font } from "expo";
 import React from "react";
 import { Dimensions, Platform, View } from "react-native";
 import StargazerNavigator from "./Navigator";
+import { processRouteConfig } from "./utils";
 let SCREENSHOTS = [];
 /* =============================================================================
 Root component for the Stargazer App.
@@ -71,8 +72,10 @@ class Stargazer extends React.Component {
         if (this.state.loading) {
             return <View style={{ flex: 1 }}/>;
         }
-        const { routes, autoStart, initialRouteName } = this.props;
-        const Navigator = StargazerNavigator(routes, !!autoStart, this.logger, initialRouteName);
+        const { routeConfig, appRouteConfig, autoStart } = this.props;
+        const routes = processRouteConfig(routeConfig, appRouteConfig);
+        const initialRouteName = routeConfig[0].screenName;
+        const Navigator = StargazerNavigator(routes, Boolean(autoStart), this.logger, initialRouteName);
         return (<View style={{ flex: 1 }} collapsable={false} /* <- WIP! (Android) */ ref={ref => {
             /* tslint:disable-next-line */
             this.view = ref;

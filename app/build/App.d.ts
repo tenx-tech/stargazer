@@ -1,5 +1,12 @@
 import React from "react";
-import { NavigationRouteConfigMap } from "react-navigation";
+import { NavigationRouteConfig, NavigationRouteConfigMap } from "react-navigation";
+export interface StargazerRouteConfigObject extends NavigationRouteConfig {
+    name: string;
+    screenName: string;
+    paramsForNextScreen?: {
+        [key: string]: any;
+    };
+}
 /**
  * This will be the type definition we must export for this library.
  */
@@ -7,8 +14,8 @@ export interface StargazerProps {
     autoStart?: boolean;
     disableLogging?: boolean;
     stargazerServerUrl: string;
-    routes: NavigationRouteConfigMap;
-    initialRouteName: string;
+    routeConfig: ReadonlyArray<StargazerRouteConfigObject>;
+    appRouteConfig?: NavigationRouteConfigMap;
     imageAssets?: ReadonlyArray<any>;
     fontAssets?: {
         [key: string]: any;
