@@ -26,7 +26,7 @@ app.post("/screenshot", (request, response) => {
     const data = JSON.stringify({ data: body, timestamp: new Date() });
 
     /**
-     * TODO: Check if stargazer-ui folder exists yet?
+     * TODO: Check if stargazer-ui folder exists yet? Maybe check when server starts up.
      */
     const path = `../../../../stargazer-ui/${DEVICE_OS}-data.json`;
 
