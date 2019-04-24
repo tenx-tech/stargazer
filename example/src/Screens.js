@@ -9,8 +9,8 @@ import { View, Text } from "react-native";
 class FirstScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Text>First Screen!</Text>
+      <View style={screenStyles}>
+        <Text style={textStyles}>First Screen!</Text>
       </View>
     );
   }
@@ -19,8 +19,8 @@ class FirstScreen extends React.Component {
 class SecondScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Text>Second Screen!</Text>
+      <View style={screenStyles}>
+        <Text style={textStyles}>Second Screen!</Text>
       </View>
     );
   }
@@ -29,12 +29,28 @@ class SecondScreen extends React.Component {
 class ThirdScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Text>Third Screen!</Text>
+      <View style={screenStyles}>
+        <Text style={textStyles}>Third Screen!</Text>
       </View>
     );
   }
 }
+
+/** =======================================================
+ * Styles
+ * ========================================================
+ */
+
+const screenStyles = {
+  flex: 1,
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "white"
+};
+
+const textStyles = {
+  fontSize: 20
+};
 
 /** =======================================================
  * Export
