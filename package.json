@@ -12,7 +12,7 @@
     "url": "https://github.com/tenx-tech/stargazer.git"
   },
   "bin": {
-    "stargazer:run": "./bin/run.sh",
+    "stargazer:view": "./bin/view.sh",
     "stargazer:client": "./bin/client.sh",
     "stargazer:server": "./bin/server.sh",
     "stargazer:init": "./bin/init.sh"

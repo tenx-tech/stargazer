@@ -19,9 +19,6 @@ export interface StargazerRouteConfigObject extends NavigationRouteConfig {
   paramsForNextScreen?: { [key: string]: any };
 }
 
-/**
- * This will be the type definition we must export for this library.
- */
 export interface StargazerProps {
   autoStart?: boolean;
   disableLogging?: boolean;

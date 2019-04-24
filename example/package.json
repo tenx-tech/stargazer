@@ -16,9 +16,9 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "stargazer": "ttab 'npm start' && npm run stargazer:server",
-    "stargazer:run": "stargazer:run",
-    "stargazer:server": "stargazer:server",
-    "stargazer:init": "stargazer:init"
+    "stargazer:init": "stargazer:init",
+    "stargazer:view": "stargazer:view",
+    "stargazer:server": "stargazer:server"
   },
   "dependencies": {
     "expo": "32.0.0",
