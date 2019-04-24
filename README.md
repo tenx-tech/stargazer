@@ -13,6 +13,14 @@ npm run setup
 
 To run the project tests, run the command `npm test`.
 
+### Project Structure
+
+This tool is organized into three subprojects: `app`, `client`, and `server`. Here's what the each do:
+
+* **App:** React components to provide the automation to drive the app and record screenshots of each screen.
+* **Client:** UI browser output to visualize the recorded screenshots.
+* **Server:** Server to handle uploading and saving screenshot data.
+
 ### Usage
 
 To use this tool in your app first install it with `npm install --save react-native-stargazer`. Then, follow these steps:
