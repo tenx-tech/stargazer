@@ -116,3 +116,7 @@ There is an example app in the `example/` folder [here](https://github.com/tenx-
 We welcome any changes, requests, features, improvements, or bug fixes with pull requests or welcome anyone interesting in more substantial changes to fork the library. We follow a normal git workflow process where pull requests can be reviewed and merged with approving reviews.
 
 In general, we would like to keep the scope of this project fairly contained and avoid any major feature requests or changes.
+
+### Publishing Changes
+
+To publish a new version of `react-native-stargazer` run `npm run build` and `npm publish` after incrementing the `package.json` project version. The build step is only necessary if the source code of any of the projects changes.
