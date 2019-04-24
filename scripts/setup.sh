@@ -1,21 +1,23 @@
 #!/bin/bash
 
+echo "Preparing to install all package dependencies:"
+
 echo ""
-echo "Install app/ dependencies ~~~"
+echo "- Installing app/ dependencies ~~~"
 echo ""
 
 cd app
 npm install
 
 echo ""
-echo "Install client/ dependencies ~~~"
+echo "- Installing client/ dependencies ~~~"
 echo ""
 
 cd ../client
 npm install
 
 echo ""
-echo "Install server/ dependencies ~~~"
+echo "- Installing server/ dependencies ~~~"
 echo ""
 
 cd ../server

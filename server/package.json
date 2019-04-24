@@ -5,6 +5,10 @@
   "author": "TenX",
   "private": false,
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenx-tech/stargazer/tree/master/server"
+  },
   "scripts": {
     "tsc": "tsc",
     "prettier": "prettier --list-different './index.ts'",

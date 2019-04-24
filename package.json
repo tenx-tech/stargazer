@@ -15,6 +15,10 @@
   ],
   "main": "./app/build/index.js",
   "types": "./app/build/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenx-tech/stargazer.git"
+  },
   "bin": {
     "stargazer:run": "./bin/run.sh",
     "stargazer:client": "./bin/client.sh",
