@@ -1,0 +1,63 @@
+# Resources
+
+resources:
+  - name: npm-cache
+    type: docker-image
+    source:
+      repository: "ymedlop/npm-cache-resource"
+      tag: "8"
+
+  - name: source
+    type: git
+    source: &repo-source
+      uri: git@github.com:tenx-tech/stargazer.git
+      branch: development
+      private_key: ((tenx-ci-ssh-key))
+
+  - name: pull-request
+    type: docker-image
+    source:
+      repository: jtarchie/pr
+
+  - name: node_modules
+    type: npm-cache
+    source:
+      <<: *repo-source
+
+  - name: pull-requests
+    type: pull-request
+    source:
+      uri: git@github.com:tenx-tech/stargazer.git
+      repo: tenx-tech/tenx-react-native
+      base: development
+      access_token: ((tenx-ci-github-token))
+      private_key: ((tenx-ci-ssh-key))
+
+# Jobs
+jobs:
+  - name: pr-tests
+    plan:
+      - get: pull-requests
+        trigger: true
+      - put: pull-requests
+        params:
+          path: pull-requests
+          status: pending
+      - get: source
+      - get: node_modules
+      - task: lint, type-check, and test source code
+        file: pull-requests/ci/test.yaml
+        params:
+          IS_PULL_REQUEST_TASK: true
+        input_mapping:
+          source: pull-requests
+        on_success:
+          put: pull-requests
+          params:
+            path: pull-requests
+            status: success
+        on_failure:
+          put: pull-requests
+          params:
+            path: pull-requests
+            status: failure
