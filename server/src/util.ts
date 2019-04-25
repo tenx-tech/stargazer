@@ -4,7 +4,9 @@ import fs from "fs";
 Types and Config
 ============================================================================= */
 
-const STARGAZER_PATH = process.env.STARGAZER_PATH || "../../../../stargazer-ui";
+const getUploadPath = () => {
+  return process.env.STARGAZER_PATH || "../../../../stargazer-ui";
+};
 
 interface ScreenshotBodyData {
   os: string;
@@ -47,7 +49,7 @@ const processScreenshotDataUpload = (body: ScreenshotBodyData): Result => {
     const DEVICE_OS = body.os;
     const data = JSON.stringify({ data: body, timestamp: new Date() });
 
-    const path = `${STARGAZER_PATH}/${DEVICE_OS}-data.json`;
+    const path = `${getUploadPath()}/${DEVICE_OS}-data.json`;
 
     console.log(
       `Upload received, saving ${body.photos.length} ${
@@ -82,7 +84,7 @@ const processScreenshotDataUpload = (body: ScreenshotBodyData): Result => {
  * a warning message if it doesn't.
  */
 const warningCheckForOutputFolder = () => {
-  if (!fs.existsSync(STARGAZER_PATH)) {
+  if (!fs.existsSync(getUploadPath())) {
     console.log(
       `\nWARNING: There seems to be no Stargazer folder found in your project root level...`,
     );
