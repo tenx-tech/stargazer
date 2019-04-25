@@ -45,7 +45,7 @@ const screenStyles = {
   flex: 1,
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "white"
+  backgroundColor: "#629cf7"
 };
 
 const textStyles = {
