@@ -21,8 +21,8 @@ This is an example Expo/React Native project showing a typical usage of the `rea
 The `src` folder contains three things:
 
 1) `AppRoutes.js` - A normal React Navigation route configuration.
-2) `Screens.js` - Some screen components
-3) `StargazerRouteConfig` - The specific route config expected by Stargazer.
+2) `Screens.js` - Some app screen components.
+3) `StargazerRouteConfig.js` - The specific route config expected by Stargazer.
 
 These items are then rendered in the top level app component `App.js`.
 
