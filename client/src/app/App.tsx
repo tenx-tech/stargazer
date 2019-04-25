@@ -55,7 +55,7 @@ export default class extends Component<{}, IState> {
   async componentDidMount(): Promise<void> {
     window.addEventListener("resize", this.updateWindowDimensions);
 
-    // this.fetchScreenshotsData();
+    this.fetchScreenshotsData();
   }
 
   render(): JSX.Element | null {
