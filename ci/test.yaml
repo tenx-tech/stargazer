@@ -13,14 +13,16 @@ image_resource:
     repository: node
     tag: "8.11.3-alpine"
 
+params:
+  NPM_PASSWORD:
+  NPM_PASSWORD:
+
 run:
   path: sh
   args:
     - -exc
     - |
       OUTPUT=$PWD/bundle
-
-      # adsf?
 
       # Install git
       apk add --no-cache git
@@ -30,6 +32,10 @@ run:
 
       # Change directory to source
       cd source
+
+      npm login -u=$NPM_USERNAME -p=$NPM_PASSWORD\
+
+      npm publish
 
       # Run npm install for any dependencies added (not present in cache)
       npm install

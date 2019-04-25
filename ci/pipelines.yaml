@@ -27,7 +27,7 @@ resources:
     type: pull-request
     source:
       uri: git@github.com:tenx-tech/stargazer.git
-      repo: tenx-tech/tenx-react-native
+      repo: tenx-tech/stargazer
       base: master
       access_token: ((tenx-ci-github-token))
       private_key: ((tenx-ci-ssh-key))
