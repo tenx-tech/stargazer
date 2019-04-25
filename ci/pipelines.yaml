@@ -1,23 +1,22 @@
-# Resources
-
-resources:
+resource_types:
   - name: npm-cache
     type: docker-image
     source:
       repository: "ymedlop/npm-cache-resource"
       tag: "8"
 
+  - name: pull-request
+    type: docker-image
+    source:
+      repository: jtarchie/pr
+
+resources:
   - name: source
     type: git
     source: &repo-source
       uri: git@github.com:tenx-tech/stargazer.git
       branch: development
       private_key: ((tenx-ci-ssh-key))
-
-  - name: pull-request
-    type: docker-image
-    source:
-      repository: jtarchie/pr
 
   - name: node_modules
     type: npm-cache
@@ -43,12 +42,10 @@ jobs:
         params:
           path: pull-requests
           status: pending
-      - get: source
       - get: node_modules
+      - get: source
       - task: lint, type-check, and test source code
         file: pull-requests/ci/test.yaml
-        params:
-          IS_PULL_REQUEST_TASK: true
         input_mapping:
           source: pull-requests
         on_success:
