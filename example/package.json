@@ -24,7 +24,7 @@
     "expo": "32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-stargazer": "0.0.61",
+    "react-native-stargazer": "0.0.68",
     "react-navigation": "3.9.0"
   },
   "devDependencies": {
