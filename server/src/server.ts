@@ -1,7 +1,11 @@
 import bodyParser from "body-parser";
 import express from "express";
 
-import { processDataUpload, ResultType, runCheck } from "./util";
+import {
+  processScreenshotDataUpload,
+  ResultType,
+  warningCheckForOutputFolder,
+} from "./util";
 
 /* =============================================================================
 Express Server to handle uploading screenshots and saving to a JSON file for
@@ -23,7 +27,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
  */
 app.post("/screenshot", (request, response) => {
   const { body } = request;
-  const result = processDataUpload(body);
+  const result = processScreenshotDataUpload(body);
 
   switch (result.type) {
     case ResultType.OK:
@@ -39,7 +43,7 @@ app.post("/screenshot", (request, response) => {
 /**
  * Run check for stargazer-ui folder.
  */
-runCheck();
+warningCheckForOutputFolder();
 
 /**
  * Run the server.

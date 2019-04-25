@@ -17,5 +17,5 @@
     "outDir": "build",
     "jsx": "preserve"
   },
-  "include": ["src"]
+  "include": ["src", "test"]
 }

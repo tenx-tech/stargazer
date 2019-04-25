@@ -4,7 +4,7 @@ import fs from "fs";
 Types and Config
 ============================================================================= */
 
-const STARGAZER_PATH = "../../../../stargazer-ui";
+const STARGAZER_PATH = process.env.STARGAZER_PATH || "../../../../stargazer-ui";
 
 interface ScreenshotBodyData {
   os: string;
@@ -36,6 +36,8 @@ Methods
 /**
  * Handle uploading the screenshots data and saving it to the target file
  * in the stargazer-ui build output.
+ *
+ * TODO: Add better types for the body input and improve input validation.
  *
  * @param body ScreenshotBodyData from upload
  * @returns Result object which is either OK or ERROR
@@ -94,7 +96,4 @@ const warningCheckForOutputFolder = () => {
 Export
 ============================================================================= */
 
-export {
-  processScreenshotDataUpload as processDataUpload,
-  warningCheckForOutputFolder as runCheck,
-};
+export { processScreenshotDataUpload, warningCheckForOutputFolder };
