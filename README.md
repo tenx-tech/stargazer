@@ -123,4 +123,4 @@ In general, we would like to keep the scope of this project fairly contained and
 
 ### Publishing Changes
 
-To publish a new version of `react-native-stargazer` run `npm run build` and `npm publish` after incrementing the `package.json` project version. The build step is only necessary if the source code of any of the projects changes.
+To publish a new version of `react-native-stargazer` run `npm run build` and `npm publish` after incrementing the `package.json` project version.

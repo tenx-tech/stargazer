@@ -1,6 +1,6 @@
 {
   "name": "react-native-stargazer",
-  "version": "0.0.56",
+  "version": "0.0.57",
   "description": "Stargazer Control System",
   "author": "TenX",
   "private": false,
@@ -13,10 +13,15 @@
   },
   "bin": {
     "stargazer:view": "./bin/view.sh",
-    "stargazer:client": "./bin/client.sh",
     "stargazer:server": "./bin/server.sh",
     "stargazer:init": "./bin/init.sh"
   },
+  "files": [
+    "app/build",
+    "client/build/",
+    "server/package.json",
+    "server/build/server.js"
+  ],
   "scripts": {
     "setup": "npm install && bash ./scripts/setup.sh",
     "client": "cd client && npm start",

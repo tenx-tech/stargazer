@@ -19,3 +19,6 @@ yarn-error.log*
 
 test/stargazer-ui/ios-data.json
 test/stargazer-ui/android-data.json
+
+# Build output
+build
