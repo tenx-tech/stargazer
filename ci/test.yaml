@@ -20,6 +20,8 @@ run:
     - |
       OUTPUT=$PWD/bundle
 
+      # adsf?
+
       # Install git
       apk add --no-cache git
 
