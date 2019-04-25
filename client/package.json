@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/tenx-tech/stargazer/tree/master/client"
   },
+  "files": [
+    "build/"
+  ],
   "homepage": ".",
   "scripts": {
     "start": "react-scripts start",

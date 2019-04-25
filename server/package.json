@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/tenx-tech/stargazer/tree/master/server"
   },
+  "files": [
+    "build/server.js"
+  ],
   "scripts": {
     "tsc": "tsc",
     "prettier": "prettier --list-different './{src,test}/**/*.{ts,tsx}'",

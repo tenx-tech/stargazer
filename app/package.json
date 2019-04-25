@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/tenx-tech/stargazer/tree/master/app"
   },
+  "files": [
+    "build/src"
+  ],
   "scripts": {
     "build": "tsc --declaration",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
