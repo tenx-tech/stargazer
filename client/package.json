@@ -1,0 +1,50 @@
+{
+  "name": "stargazer-client",
+  "version": "0.0.1",
+  "description": "Stargazer Portal",
+  "author": "TenX",
+  "private": false,
+  "license": "ISC",
+  "main": "src/index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenx-tech/stargazer/tree/master/client"
+  },
+  "files": [
+    "build/"
+  ],
+  "homepage": ".",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test:unit": "CI=true react-scripts test",
+    "test:watch": "npm run test:unit --watch",
+    "test:update-snapshots": "npm run test:unit -u",
+    "prettier": "prettier --list-different './src/**/*.{ts,tsx}'",
+    "prettier:fix": "prettier --write './src/**/*.{ts,tsx}'",
+    "tslint": "tslint --project tsconfig.json -c tslint.json",
+    "tslint:fix": "tslint --project tsconfig.json -c tslint.json --fix",
+    "format": "npm run prettier:fix && npm run tslint:fix",
+    "tsc": "tsc",
+    "test": "npm run prettier && npm run tslint && npm run tsc && npm run test:unit",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/react": "16.8.4",
+    "@types/react-dom": "16.8.2",
+    "prettier": "1.16.4",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-scripts": "2.1.8",
+    "tslint": "5.12.1",
+    "tslint-immutable": "5.3.0",
+    "typescript": "3.4.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

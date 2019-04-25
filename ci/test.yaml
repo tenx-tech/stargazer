@@ -1,0 +1,36 @@
+platform: linux
+
+inputs:
+  - name: source
+  - name: node_modules
+
+outputs:
+  - name: bundle
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: "8.11.3-alpine"
+
+run:
+  path: sh
+  args:
+    - -exc
+    - |
+      OUTPUT=$PWD/bundle
+
+      # Add bash to run test script
+      apk update && apk add bash && apk add --no-cache git
+
+      # Copy node_modules to source directory
+      cp -r node_modules/node_modules source
+
+      # Change directory to source
+      cd source
+
+      # Install all dependencies
+      npm run setup
+
+      # Run test suite
+      npm run test

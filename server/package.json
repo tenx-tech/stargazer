@@ -1,0 +1,50 @@
+{
+  "name": "stargazer-server",
+  "version": "0.0.1",
+  "description": "Stargazer Satellite System",
+  "author": "TenX",
+  "private": false,
+  "main": "src/server.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenx-tech/stargazer/tree/master/server"
+  },
+  "files": [
+    "build/server.js"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "prettier": "prettier --list-different './{src,test}/**/*.{ts,tsx}'",
+    "prettier:fix": "prettier --write './{src,test}/**/*.{ts,tsx}'",
+    "tslint": "tslint --project tsconfig.json -c tslint.json",
+    "test:unit": "STARGAZER_PATH=./test/stargazer-ui jest",
+    "test:watch": "npm run test:unit -- --watch",
+    "test:update-snapshots": "npm run test:unit -- -u",
+    "test": "npm run prettier && npm run tslint && npm run test:unit",
+    "dev": "tsc-watch --onSuccess \"babel-node ./build/server.js\"",
+    "start": "node ./build/server.js",
+    "compile": "tsc && babel build -d build",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/express": "4.16.1",
+    "@types/jest": "^24.0.11",
+    "babel-cli": "6.26.0",
+    "babel-jest": "^24.7.1",
+    "babel-preset-env": "1.7.0",
+    "express": "4.16.4",
+    "jest": "^24.7.1",
+    "prettier": "1.16.4",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "5.3.3",
+    "tsc-watch": "2.1.2",
+    "tslint": "5.13.1",
+    "tslint-immutable": "5.3.2",
+    "typescript": "3.2.4",
+    "webpack": "4.30.0",
+    "webpack-cli": "3.3.1"
+  }
+}

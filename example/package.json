@@ -1,0 +1,34 @@
+{
+  "name": "react-native-stargazer-example-app",
+  "version": "0.0.1",
+  "description": "Example app showing typical usage for the react-native-stargazer library",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": false,
+  "author": "TenX",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenx-tech/stargazer.git"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject",
+    "stargazer": "ttab 'npm start' && npm run stargazer:server",
+    "stargazer:init": "stargazer:init",
+    "stargazer:view": "stargazer:view",
+    "stargazer:server": "stargazer:server"
+  },
+  "dependencies": {
+    "expo": "32.0.0",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-stargazer": "0.0.61",
+    "react-navigation": "3.9.0"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "5.0.0",
+    "ttab": "0.6.1"
+  }
+}

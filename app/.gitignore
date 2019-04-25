@@ -1,0 +1,8 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+.DS_store
+.env
+
+# Build output
+build
