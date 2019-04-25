@@ -4,7 +4,7 @@
   "description": "Stargazer Satellite System",
   "author": "TenX",
   "private": false,
-  "main": "server.ts",
+  "main": "src/server.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/tenx-tech/stargazer/tree/master/server"
