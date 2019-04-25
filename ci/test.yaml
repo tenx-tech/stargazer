@@ -13,10 +13,6 @@ image_resource:
     repository: node
     tag: "8.11.3-alpine"
 
-params:
-  NPM_PASSWORD:
-  NPM_PASSWORD:
-
 run:
   path: sh
   args:
@@ -24,18 +20,11 @@ run:
     - |
       OUTPUT=$PWD/bundle
 
-      # Install git
-      apk add --no-cache git
-
       # Copy node_modules to source directory
       cp -r node_modules/node_modules source
 
       # Change directory to source
       cd source
-
-      npm login -u=$NPM_USERNAME -p=$NPM_PASSWORD\
-
-      npm publish
 
       # Run npm install for any dependencies added (not present in cache)
       npm install
