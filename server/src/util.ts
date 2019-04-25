@@ -5,7 +5,7 @@ Types and Config
 ============================================================================= */
 
 const getUploadPath = () => {
-  return process.env.STARGAZER_PATH || "../../../../stargazer-ui";
+  return process.env.STARGAZER_PATH || "../../../../../stargazer-ui";
 };
 
 interface ScreenshotBodyData {
