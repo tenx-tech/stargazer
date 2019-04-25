@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Stargazer App Component 1`] = `
+<View
+  collapsable={false}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      enabled={false}
+      hitSlop={
+        Object {
+          "right": 50,
+        }
+      }
+      maxDeltaY={20}
+      minOffsetX={5}
+      onGestureEvent={[Function]}
+      onHandlerStateChange={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#eee",
+            "flex": 1,
+            "flexDirection": "column-reverse",
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            pointerEvents="auto"
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "opacity": 1,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "transform": Array [
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 0,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              accessibilityElementsHidden={false}
+              style={
+                Object {
+                  "backgroundColor": "rgb(255, 255, 255)",
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                    "flexDirection": "column-reverse",
+                    "overflow": "hidden",
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "rgb(242, 252, 255)",
+                        "flex": 1,
+                        "justifyContent": "center",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "fontSize": 18,
+                          "fontWeight": "bold",
+                          "marginBottom": 5,
+                        }
+                      }
+                    >
+                      Welcome to Stargazer!!! 🔭
+                    </Text>
+                    <Text
+                      style={
+                        Object {
+                          "marginBottom": 25,
+                          "marginTop": 5,
+                          "textAlign": "center",
+                          "width": "90%",
+                        }
+                      }
+                    >
+                      This tool will automatically generate static images of all your app screens.
+                    </Text>
+                    <View
+                      accessibilityRole="button"
+                      accessibilityStates={Array []}
+                      accessible={true}
+                      isTVSelectable={true}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        Object {
+                          "opacity": 1,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Array [
+                            Object {},
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            Array [
+                              Object {
+                                "color": "#007AFF",
+                                "fontSize": 18,
+                                "padding": 8,
+                                "textAlign": "center",
+                              },
+                            ]
+                          }
+                        >
+                          Launch Stargazer
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={Object {}}
+                >
+                  <View
+                    onLayout={[Function]}
+                    pointerEvents="box-none"
+                    style={
+                      Object {
+                        "borderBottomColor": "transparent",
+                        "borderBottomWidth": 0,
+                        "elevation": 0,
+                        "height": 64,
+                        "left": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 0,
+                        "paddingRight": 0,
+                        "paddingTop": 20,
+                        "position": "absolute",
+                        "right": 0,
+                        "shadowColor": "transparent",
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "flex": 1,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "bottom": 0,
+                            "flexDirection": "row",
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          }
+                        }
+                      >
+                        <View
+                          pointerEvents="box-none"
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "backgroundColor": "transparent",
+                              "bottom": 0,
+                              "flexDirection": "row",
+                              "justifyContent": "center",
+                              "left": 0,
+                              "opacity": 1,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                            }
+                          }
+                        >
+                          <Text
+                            accessibilityTraits="header"
+                            accessible={false}
+                            allowFontScaling={true}
+                            numberOfLines={1}
+                            onLayout={[Function]}
+                            style={
+                              Object {
+                                "color": "rgb(255, 255, 255)",
+                                "fontSize": 20,
+                                "fontWeight": "bold",
+                                "marginHorizontal": 16,
+                                "textAlign": "center",
+                              }
+                            }
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
