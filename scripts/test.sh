@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo "Preparing to project tests:"
 
 # Run app/ tests
