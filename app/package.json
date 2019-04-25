@@ -5,7 +5,7 @@
   "author": "TenX",
   "private": false,
   "license": "ISC",
-  "main": "app/index.ts",
+  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/tenx-tech/stargazer/tree/master/app"

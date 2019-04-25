@@ -62,6 +62,11 @@ export default class extends Component<{}, IState> {
     if (this.state.loading) {
       return null;
     } else if (this.state.error) {
+      /**
+       * TODO: We should add an error fallback UI here which at a minimum
+       * provides instructions for how the user should use the tool and ideally
+       * parses the error condition to try to explain what exactly failed.
+       */
       console.log("TODO: Handle error state!");
       return null;
     }
