@@ -15,7 +15,7 @@ resources:
     type: git
     source: &repo-source
       uri: git@github.com:tenx-tech/stargazer.git
-      branch: development
+      branch: master
       private_key: ((tenx-ci-ssh-key))
 
   - name: node_modules
@@ -28,7 +28,7 @@ resources:
     source:
       uri: git@github.com:tenx-tech/stargazer.git
       repo: tenx-tech/tenx-react-native
-      base: development
+      base: master
       access_token: ((tenx-ci-github-token))
       private_key: ((tenx-ci-ssh-key))
 
