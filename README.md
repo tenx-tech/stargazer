@@ -115,6 +115,11 @@ Now run `npm run stargazer:server` and then launch your app in another terminal 
 
 There is an example app in the `example/` folder [here](https://github.com/tenx-tech/stargazer/tree/master/example). You can view that project directly to see how this tool is used with an existing Expo/React Native app.
 
+A demo of running the example app to record screenshots:
+
+![demo](https://user-images.githubusercontent.com/18126719/56736610-33e8d700-679b-11e9-8bb3-5a86e374fc29.gif)
+
+
 ### Contributing
 
 We welcome any changes, requests, features, improvements, or bug fixes with pull requests or welcome anyone interesting in more substantial changes to fork the library. We follow a normal git workflow process where pull requests can be reviewed and merged with approving reviews.
