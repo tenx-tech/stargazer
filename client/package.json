@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:unit": "react-scripts test",
+    "test:unit": "CI=true react-scripts test",
     "test:watch": "npm run test:unit --watch",
     "test:update-snapshots": "npm run test:unit -u",
     "prettier": "prettier --list-different './src/**/*.{ts,tsx}'",
