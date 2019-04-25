@@ -32,7 +32,9 @@ interface StargazerScreenshotControllerProps {
  * @param props StargazerScreenshotControllerProps
  * @param props flattened props object
  */
-const renderPropsHelper = (props: StargazerScreenshotControllerProps) => {
+export const renderPropsHelper = (
+  props: StargazerScreenshotControllerProps,
+) => {
   return {
     navigation: props.navigation,
     viewRef: props.screenProps.viewRef,
