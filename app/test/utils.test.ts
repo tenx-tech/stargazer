@@ -21,15 +21,6 @@ describe("utils", () => {
     `);
   });
 
-  test.todo("mapRouteConfigToStargazerRouteMap", () => {
-    /**
-     * TODO: Add tests.
-     */
-  });
-
-  test.todo("getStackNavigatorConfig", () => {
-    /**
-     * TODO: Add tests.
-     */
-  });
+  test.todo("mapRouteConfigToStargazerRouteMap");
+  test.todo("getStackNavigatorConfig");
 });

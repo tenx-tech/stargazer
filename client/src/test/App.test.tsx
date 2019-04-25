@@ -7,7 +7,7 @@ import App from "../app/App";
 global.React = React; // tslint:disable-line
 
 describe("App", () => {
-  test.todo("App Renders", async () => {
+  test.skip("App Renders", () => {
     /**
      * TODO: Test the main app component. Ideally this will require mocking
      * the fetch request which fetches the screenshot JSON data and the

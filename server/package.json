@@ -11,8 +11,8 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "prettier": "prettier --list-different './src'",
-    "prettier:fix": "prettier --write './src'",
+    "prettier": "prettier --list-different './{src,test}/**/*.{ts,tsx}'",
+    "prettier:fix": "prettier --write './{src,test}/**/*.{ts,tsx}'",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
     "test:unit": "STARGAZER_PATH=./test/stargazer-ui jest",
     "test:watch": "npm run test:unit -- --watch",
