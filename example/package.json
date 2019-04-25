@@ -18,7 +18,8 @@
     "stargazer": "ttab 'npm start' && npm run stargazer:server",
     "stargazer:init": "stargazer:init",
     "stargazer:view": "stargazer:view",
-    "stargazer:server": "stargazer:server"
+    "stargazer:server": "stargazer:server",
+    "deploy": "surge ./stargazer-ui/ stargazer-app-demo.surge.sh"
   },
   "dependencies": {
     "expo": "32.0.0",
