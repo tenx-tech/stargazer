@@ -21,15 +21,15 @@ describe("utils", () => {
     `);
   });
 
-  test.skip("mapRouteConfigToStargazerRouteMap", () => {
+  test.todo("mapRouteConfigToStargazerRouteMap", () => {
     /**
-     * TODO: Test this method.
+     * TODO: Add tests.
      */
   });
 
-  test.skip("getStackNavigatorConfig", () => {
+  test.todo("getStackNavigatorConfig", () => {
     /**
-     * TODO: Test this method.
+     * TODO: Add tests.
      */
   });
 });
