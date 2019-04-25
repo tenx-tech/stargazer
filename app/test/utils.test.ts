@@ -1,4 +1,4 @@
-import { renderPropsHelper } from "../src/utils";
+import { renderPropsHelper } from "@src/utils";
 
 describe("utils", () => {
   test("renderPropsHelper", () => {

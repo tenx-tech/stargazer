@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import TestRenderer from "react-test-renderer";
 
-import Stargazer, { StargazerRouteConfigObject } from "../src/App";
+import Stargazer, { StargazerRouteConfigObject } from "@src/App";
 
 // @ts-ignore — for someone reason Jest throws an error React is not defined?
 global.React = React; // tslint:disable-line
