@@ -20,6 +20,9 @@ run:
     - |
       OUTPUT=$PWD/bundle
 
+      # Add bash to run test script
+      apk update && apk add bash
+
       # Copy node_modules to source directory
       cp -r node_modules/node_modules source
 
