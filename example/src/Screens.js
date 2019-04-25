@@ -49,7 +49,8 @@ const screenStyles = {
 };
 
 const textStyles = {
-  fontSize: 20
+  fontSize: 22,
+  color: "white"
 };
 
 /** =======================================================

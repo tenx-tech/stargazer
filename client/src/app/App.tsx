@@ -60,6 +60,9 @@ export default class extends Component<{}, IState> {
 
   render(): JSX.Element | null {
     if (this.state.loading) {
+      /**
+       * TODO: Build some loading UI for the loading condition.
+       */
       return null;
     } else if (this.state.error) {
       /**
