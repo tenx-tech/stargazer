@@ -23,6 +23,10 @@ This tool is organized into three subprojects: `app`, `client`, and `server`. He
 * **Client:** UI browser output to visualize the recorded screenshots.
 * **Server:** Server to handle uploading and saving screenshot data.
 
+### Workflow
+
+Stargazer requires some setup and ongoing maintenance to be used effectively. First, you must install and setup the tool and then build a specific route configuration to provide to Stargazer. This route configuration must be maintained as your app develops. For instance, if you add a new screen to your app you will have to add it to the route configuration for it to be recorded. After this setup and overheard, you should be able to repeatedly run the tool to record your app screenshots.
+
 ### Usage
 
 To use this tool in your app first install it with `npm install --save react-native-stargazer`. Stargazer works by rendering the default library export `Stargazer` component and passing in specific props. The required props look like this:

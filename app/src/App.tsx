@@ -193,7 +193,7 @@ class Stargazer extends React.Component<StargazerProps, IState> {
           photos: SCREENSHOTS,
         }),
       });
-      this.logger("Upload complete!!! Stargazer idle 🔭");
+      this.logger("Upload complete!!! Stargazer idle 🔭\n");
     } catch (err) {
       console.log(
         "Upload failed... Did you provide the correct stargazerServerUrl prop and run the Stargazer Server (npm run stargazer:server)? The stargazerServerUrl must be your current computer's IP address.",
