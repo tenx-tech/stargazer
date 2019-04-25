@@ -54,7 +54,7 @@ const processScreenshotDataUpload = (body: ScreenshotBodyData): Result => {
     console.log(
       `Upload received, saving ${body.photos.length} ${
         body.os
-      } screenshots to file: ${path}...`,
+      } screenshots to file: ${path.replace(/..\//gi, "")}...`,
     );
 
     /**
