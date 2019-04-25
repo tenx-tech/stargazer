@@ -59,6 +59,20 @@ class Stargazer extends React.Component<StargazerProps, IState> {
   async componentDidMount(): Promise<void> {
     await this.preloadAssets();
 
+    /**
+     * TODO: We should add some validation for the stargazerServerUrl when
+     * this component mounts to validate that the provided value is valid
+     * and uses an IP.
+     *
+     * We could even add a GET health check to the server and make a fetch
+     * request here to verify we can talk to the server as soon as the app
+     * starts up, and immediately give the user feedback the provided
+     * stargazerServerUrl is invalid. This would be ideal.
+     *
+     * This should allow us to then remove the timeoutUploadSafeguard method
+     * used in the upload process below.
+     */
+
     this.setState({
       loading: false,
     });
@@ -75,13 +89,22 @@ class Stargazer extends React.Component<StargazerProps, IState> {
       autoStart,
       backgroundColor,
     } = this.props;
+    /**
+     * Get final route map for Stargazer.
+     */
     const routes = mapRouteConfigToStargazerRouteMap(
       routeConfig,
       appRouteConfig,
     );
 
+    /**
+     * Default initialRouteName to the first provided screenName.
+     */
     const initialRouteName = routeConfig[0].screenName;
 
+    /**
+     * Create the app navigator.
+     */
     const Navigator = StargazerNavigator(
       routes,
       Boolean(autoStart),

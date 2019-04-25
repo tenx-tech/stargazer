@@ -8,6 +8,11 @@ import {
   ScreenshotsData,
 } from "./util";
 
+/**
+ * TODO: The UI in this app could be refactored to use a styled components
+ * rather than the current approach used here.
+ */
+
 /* =============================================================================
 Types and Config
 ============================================================================= */
@@ -69,9 +74,8 @@ export default class extends Component<{}, IState> {
       );
     } else if (this.state.error) {
       /**
-       * TODO: We should add an error fallback UI here which at a minimum
-       * provides instructions for how the user should use the tool and ideally
-       * parses the error condition to try to explain what exactly failed.
+       * TODO: We could try to return error information from the processScreenshotsData method
+       * and then provide a better error message/instructions to the user here.
        */
       return (
         <div className="Cover">

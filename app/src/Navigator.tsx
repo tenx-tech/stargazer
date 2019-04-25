@@ -15,6 +15,12 @@ Root navigator for Stargazer App.
 
 export const STARGAZER_INIT = "STARGAZER_INIT";
 
+/**
+ * Method to create the Stargazer routes.
+ *
+ * TODO: Convert these arguments to an object with named fields.
+ *
+ */
 const getStargazerRoutes = (
   routes: NavigationRouteConfigMap,
   autoStart: boolean,
@@ -41,6 +47,9 @@ const getStargazerRoutes = (
 
 /**
  * Root navigator for the Stargazer tool.
+ *
+ * TODO: Convert these arguments to an object with named fields.
+ *
  */
 export default (
   routes: NavigationRouteConfigMap,

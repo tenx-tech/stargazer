@@ -47,6 +47,8 @@ export const renderPropsHelper = (
  * StackNavigator of routes, providing the Stargazer HOC Screenshot controller and
  * route information for each screen. Big function!
  *
+ * TODO: Refactor this method to make it more readable.
+ *
  * @param routeConfig Stargazer route config
  * @param appRouteConfig original app route configuration object
  * @returns NavigationRouteConfigMap for Stargazer App
