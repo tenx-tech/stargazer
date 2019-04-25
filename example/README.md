@@ -26,4 +26,4 @@ The `src` folder contains three things:
 
 These items are then rendered in the top level app component `App.js`.
 
-The example UI output is contained in the `stargazer-ui` folder and can be viewed by running the `npm run stargazer:view` command.
+The example UI output is contained in the `stargazer-ui` folder and can be viewed by running the `npm run stargazer:view` command, or at this hosted URL: https://stargazer-app-demo.surge.sh/.
