@@ -1,6 +1,6 @@
 # Stargazer
 
-<img width="175" alt="Stargazer Logo" src="https://user-images.githubusercontent.com/18126719/56791599-0868f980-683a-11e9-8a8b-134ced040c8e.png">
+<img width="215" alt="Stargazer Logo" src="https://user-images.githubusercontent.com/18126719/56791599-0868f980-683a-11e9-8a8b-134ced040c8e.png">
 
 [![npm version](https://badge.fury.io/js/react-native-stargazer.svg)](https://badge.fury.io/js/react-native-stargazer) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
