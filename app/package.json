@@ -11,6 +11,7 @@
     "url": "https://github.com/tenx-tech/stargazer/tree/master/app"
   },
   "files": [
+    "assets",
     "build/src"
   ],
   "scripts": {
