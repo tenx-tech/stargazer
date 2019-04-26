@@ -6,6 +6,9 @@
 
 Stargazer is a tool for manual testing UI regressions for Expo/React Native apps. It records screenshots of app screens and displays these in a browser UI for side-by-side comparison. This is useful for quick reference of screen designs, product/design review sessions, or testing for UI regressions.
 
+<img width="1440" alt="Screen Shot 2019-04-26 at 4 25 31 PM" src="https://user-images.githubusercontent.com/18126719/56794058-f4c09180-683f-11e9-9834-0ddc59d36d8d.png">
+
+
 ## Contents
 
   - [Project Structure](#project-structure)

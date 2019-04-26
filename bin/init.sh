@@ -62,10 +62,12 @@ ANDROID_TEMP=tmp/android-data.json
 
 if [ -f $IOS_TEMP ]; then
   cp $IOS_TEMP $IOS
+  echo "Restoring existing iOS screenshot data"
 fi
 
 if [ -f $ANDROID_TEMP ]; then
   cp $ANDROID_TEMP $ANDROID
+  echo "Restoring existing Android screenshot data"
 fi
 
 # Remove the tmp folder
