@@ -1,7 +1,8 @@
-# Stargazer 🔭
+# Stargazer
 
-[![npm version](https://badge.fury.io/js/react-native-stargazer.svg)](https://badge.fury.io/js/react-native-stargazer) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+<img width="175" alt="Stargazer Logo" src="https://user-images.githubusercontent.com/18126719/56791599-0868f980-683a-11e9-8a8b-134ced040c8e.png">
 
+[![npm version](https://badge.fury.io/js/react-native-stargazer.svg)](https://badge.fury.io/js/react-native-stargazer) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 Stargazer is a tool for manual testing UI regressions for Expo/React Native apps. It records screenshots of app screens and displays these in a browser UI for side-by-side comparison. This is useful for quick reference of screen designs, product/design review sessions, or testing for UI regressions.
 
@@ -184,4 +185,4 @@ To publish a new version of `react-native-stargazer` run `npm run build` and `np
 
 ## License
 
-MIT
+[MIT](https://github.com/tenx-tech/stargazer/blob/master/LICENSE)
