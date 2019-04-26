@@ -11,12 +11,11 @@
     "url": "https://github.com/tenx-tech/stargazer/tree/master/app"
   },
   "files": [
-    "assets",
     "build/src"
   ],
   "scripts": {
     "start": "expo start",
-    "build": "tsc --declaration",
+    "build": "tsc --declaration && cp assets/stargazer.png build/src",
     "tslint": "tslint --project tsconfig.json -c tslint.json",
     "tslint:fix": "tslint --project tsconfig.json -c tslint.json --fix",
     "prettier:fix": "prettier --config .prettierrc --write './{src,test}/**/*.{ts,tsx}'",
