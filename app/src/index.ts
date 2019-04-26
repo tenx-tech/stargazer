@@ -1,4 +1,4 @@
-import Stargazer, { StargazerProps } from "./App";
+import Stargazer, { StargazerProps, StargazerRouteConfigObject } from "./App";
 
-export { StargazerProps };
+export { StargazerProps, StargazerRouteConfigObject };
 export default Stargazer;
