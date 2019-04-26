@@ -6,6 +6,10 @@ import { View, Text } from "react-native";
  * ========================================================
  */
 
+/**
+ * TODO: Update these and give each screen a different background,
+ * and re-build the example GIF to show the different backgrounds.
+ */
 class FirstScreen extends React.Component {
   render() {
     return (
