@@ -102,16 +102,26 @@ exports[`App Stargazer App Component 1`] = `
                       }
                     }
                   >
+                    <Image
+                      source={1}
+                      style={
+                        Object {
+                          "height": 125,
+                          "width": 125,
+                        }
+                      }
+                    />
                     <Text
                       style={
                         Object {
                           "fontSize": 18,
                           "fontWeight": "bold",
                           "marginBottom": 5,
+                          "marginTop": 15,
                         }
                       }
                     >
-                      Welcome to Stargazer!!! 🔭
+                      Welcome to Stargazer!!!
                     </Text>
                     <Text
                       style={
