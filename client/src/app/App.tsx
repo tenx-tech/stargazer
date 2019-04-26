@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
+/**
+ * TODO: Change logo to Stargazer logo!!!
+ */
 import logo from "../tenx_logo.png";
 import {
   processScreenshotsData,
@@ -97,6 +100,16 @@ export default class extends Component<{}, IState> {
         <header className="AppHeader">
           <img src={logo} className="AppLogo" alt="logo" />
           <p className="HeaderTitle">Stargazer UI Testing System</p>
+          {DESKTOP && (
+            <a
+              target="_blank"
+              className="GitHub Repo"
+              rel="noopener noreferrer"
+              href="https://github.com/tenx-tech/stargazer"
+            >
+              GitHub
+            </a>
+          )}
         </header>
         {DESKTOP && (
           <div className="TimestampBlock">
