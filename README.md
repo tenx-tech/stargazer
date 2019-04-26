@@ -84,6 +84,8 @@ Specifically, a user must provide the `routeConfig` prop which is an array of al
 Here is an example of what the `routeConfig` should look like:
 
 ```js
+import { FirstScreen, SecondScreen, ThirdScreen } from "./screens";
+
 // Stargazer Route Config:
 const StargazerRouteConfig = [
   {
@@ -107,6 +109,9 @@ const StargazerRouteConfig = [
 And an example of the corresponding top level app component:
 
 ```js
+import appRoutes from "./src/routes";
+import stargazerRoutes from "./src/stargazerRouteConfig";
+
 // Top Level App Component:
 export default class extends React.Component {
   render(): JSX.Element {
@@ -114,7 +119,6 @@ export default class extends React.Component {
       <Stargazer
         appRouteConfig={appRoutes}
         routeConfig={stargazerRoutes}
-        backgroundColor={Colors.background}
         stargazerServerUrl="http://1.2.3.4:9000/screenshot"
       />
     );
