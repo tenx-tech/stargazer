@@ -1,6 +1,6 @@
 import { Permissions } from "expo";
 import React from "react";
-import { Button, Text, View } from "react-native";
+import { Button, Image, Text, View } from "react-native";
 import { NavigationScreenProp } from "react-navigation";
 
 /* =============================================================================
@@ -61,7 +61,11 @@ class StargazerStartScreen extends React.Component<IProps, IState> {
     const uploadComplete = this.props.navigation.getParam("uploadComplete");
     return (
       <Container>
-        <Title>Welcome to Stargazer!!! 🔭</Title>
+        <Image
+          style={{ height: 125, width: 125 }}
+          source={require("../assets/stargazer.png")}
+        />
+        <Title>Welcome to Stargazer!!!</Title>
         <Subtitle>
           {uploadComplete
             ? "Upload complete."
@@ -134,7 +138,14 @@ const Container = (props: { children: ReadonlyArray<JSX.Element> }) => (
 
 const Title = (props: { children: string }) => {
   return (
-    <Text style={{ marginBottom: 5, fontWeight: "bold", fontSize: 18 }}>
+    <Text
+      style={{
+        fontSize: 18,
+        marginTop: 15,
+        marginBottom: 5,
+        fontWeight: "bold",
+      }}
+    >
       {props.children}
     </Text>
   );

@@ -153,14 +153,11 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     }
 
     try {
-      if (this.props.imageAssets) {
-        await Promise.all(
-          this.props.imageAssets.map(asset => {
-            // @ts-ignore - prop type should be correct I think the Expo type is wrong
-            return Asset.fromModule(asset).downloadAsync();
-          }),
-        );
-      }
+      await Asset.loadAsync(
+        [require("../assets/stargazer.png")].concat(
+          this.props.imageAssets || [],
+        ),
+      );
     } catch (err) {
       console.log(
         "Error fetching providing imageAssets - please check they match the expected format. Error:",

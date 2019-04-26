@@ -8,7 +8,7 @@ import {
 } from "react-navigation";
 
 import { ScreenshotData } from "./App";
-import { STARGAZER_INIT } from "./Navigator";
+import { STARGAZER_INIT } from "./constants";
 
 /* =============================================================================
 Types and Config

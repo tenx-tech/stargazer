@@ -6,14 +6,13 @@ import {
   NavigationScreenProp,
 } from "react-navigation";
 
+import { STARGAZER_INIT } from "./constants";
 import StartScreen from "./StartScreen";
 import { getStackNavigatorConfig } from "./utils";
 
 /* =============================================================================
 Root navigator for Stargazer App.
 ============================================================================= */
-
-export const STARGAZER_INIT = "STARGAZER_INIT";
 
 /**
  * Method to create the Stargazer routes.
