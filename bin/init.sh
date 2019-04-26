@@ -73,6 +73,7 @@ fi
 # Remove the tmp folder
 rm -rf tmp
 
+echo ""
 echo "Stargazer UI succesfully built!!!"
 echo ""
 echo "You should find a new folder in your directory called stargazer-ui which contains the generated UI browser."
