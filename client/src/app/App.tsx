@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-/**
- * TODO: Change logo to Stargazer logo!!!
- */
-import logo from "../tenx_logo.png";
+import stargazer from "../stargazer.png";
 import {
   processScreenshotsData,
   ScreenshotItem,
@@ -98,8 +95,8 @@ export default class extends Component<{}, IState> {
     return (
       <div className="App">
         <header className="AppHeader">
-          <img src={logo} className="AppLogo" alt="logo" />
-          <p className="HeaderTitle">Stargazer UI Testing System</p>
+          <img src={stargazer} className="AppLogo" alt="logo" />
+          <p className="HeaderTitle">Stargazer UI</p>
           {DESKTOP && (
             <a
               target="_blank"
