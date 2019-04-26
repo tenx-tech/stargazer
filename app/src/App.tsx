@@ -154,9 +154,7 @@ class Stargazer extends React.Component<StargazerProps, IState> {
 
     try {
       await Asset.loadAsync(
-        [require("../assets/stargazer.png")].concat(
-          this.props.imageAssets || [],
-        ),
+        [require("./stargazer.png")].concat(this.props.imageAssets || []),
       );
     } catch (err) {
       console.log(

@@ -63,7 +63,7 @@ class StargazerStartScreen extends React.Component<IProps, IState> {
       <Container>
         <Image
           style={{ height: 125, width: 125 }}
-          source={require("../assets/stargazer.png")}
+          source={require("./stargazer.png")}
         />
         <Title>Welcome to Stargazer!!!</Title>
         <Subtitle>
