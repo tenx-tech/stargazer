@@ -4,6 +4,7 @@
   "description": "Stargazer Satellite System",
   "author": "TenX",
   "private": false,
+  "license": "MIT",
   "main": "src/server.ts",
   "repository": {
     "type": "git",

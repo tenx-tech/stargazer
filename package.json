@@ -4,7 +4,7 @@
   "description": "Stargazer Control System",
   "author": "TenX",
   "private": false,
-  "license": "ISC",
+  "license": "MIT",
   "main": "./app/build/src/index.js",
   "types": "./app/build/src/index.d.ts",
   "repository": {

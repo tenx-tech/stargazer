@@ -4,7 +4,7 @@
   "description": "Stargazer Portal",
   "author": "TenX",
   "private": false,
-  "license": "ISC",
+  "license": "MIT",
   "main": "src/index.tsx",
   "repository": {
     "type": "git",
