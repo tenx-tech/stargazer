@@ -17,6 +17,11 @@ if [ -f $ANDROID ]; then
 fi
 
 # Remove existing stargazer-ui folder and copy current build output
+#
+# TODO: Try to find an approach which uses a relative path here for copying
+# the stargazer-ui folder and the screenshots data. Using a relative path feels
+# a little unstable. See also the getUploadPath method in server/src/utils.ts.
+#
 rm -rf ../../../stargazer-ui
 mkdir ../../../stargazer-ui
 cp -a build/. ../../../stargazer-ui
