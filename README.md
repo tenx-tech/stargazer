@@ -33,7 +33,7 @@ A typical workflow with Stargazer requires some setup and maintenance overhead, 
 
 ## Prerequisites
 
-Stargazer assumes you have a React Native app developed with Expo which uses React Navigation. Stargazer depends on Expo Camera APIs and React Navigation to handle navigating through the provided screens.
+Stargazer assumes you have a React Native app developed with Expo which uses React Navigation. Stargazer depends on Expo Camera APIs and React Navigation to handle navigating through the provided screens. The tool also includes some shell scripts which require a Unix environment to run correctly.
 
 ## Quick Start
 

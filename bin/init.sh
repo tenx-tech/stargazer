@@ -3,6 +3,20 @@
 cd node_modules/react-native-stargazer/client
 
 #
+# NOTE: These shells will not work on a Windows machine...
+#
+# Because the main thing we need to do is copy the output folder we
+# could recommend an alternative workaround for Windows users, like:
+# xcopy /E c:\source c:\dest
+# reference: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy
+#
+# Or, we could refactor these bin scripts to be NodeJS programs which
+# should be runnable on both environments.
+#
+# TODO: Figure out these issues.
+#
+
+#
 # NOTE: This script copies over the entire pre-built output folder to
 # the user's project directory. This is fast and they don't have to install
 # any dependencies or run a build. However, it's possible they would want
