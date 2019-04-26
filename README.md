@@ -17,6 +17,7 @@ Stargazer is a tool for manual testing UI regressions for Expo/React Native apps
   - [Development](#development)
   - [Contributing](#contributing)
   - [Publishing Changes](#publishing-changes)
+  - [License](#license)
 
 ## Project Structure
 
@@ -180,3 +181,7 @@ In general, we would like to keep the scope of this project fairly contained and
 ## Publishing Changes
 
 To publish a new version of `react-native-stargazer` run `npm run build` and `npm publish` after incrementing the `package.json` project version.
+
+## License
+
+MIT
