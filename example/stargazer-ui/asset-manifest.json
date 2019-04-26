@@ -1,14 +1,14 @@
 {
-  "main.css": "./static/css/main.c4fc853c.chunk.css",
-  "main.js": "./static/js/main.9f2ca08a.chunk.js",
-  "main.js.map": "./static/js/main.9f2ca08a.chunk.js.map",
+  "main.css": "./static/css/main.b1e21c4a.chunk.css",
+  "main.js": "./static/js/main.266c034d.chunk.js",
+  "main.js.map": "./static/js/main.266c034d.chunk.js.map",
   "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
   "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
   "static/js/2.fac019e5.chunk.js": "./static/js/2.fac019e5.chunk.js",
   "static/js/2.fac019e5.chunk.js.map": "./static/js/2.fac019e5.chunk.js.map",
   "index.html": "./index.html",
-  "precache-manifest.452ce7a70136ce01a4947402dbd5fdb3.js": "./precache-manifest.452ce7a70136ce01a4947402dbd5fdb3.js",
+  "precache-manifest.8577e0dfebc86373296e570e882908a7.js": "./precache-manifest.8577e0dfebc86373296e570e882908a7.js",
   "service-worker.js": "./service-worker.js",
-  "static/css/main.c4fc853c.chunk.css.map": "./static/css/main.c4fc853c.chunk.css.map",
-  "static/media/tenx_logo.png": "./static/media/tenx_logo.318b87d0.png"
+  "static/css/main.b1e21c4a.chunk.css.map": "./static/css/main.b1e21c4a.chunk.css.map",
+  "static/media/stargazer.png": "./static/media/stargazer.1a235b8d.png"
 }
