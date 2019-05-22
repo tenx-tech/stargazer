@@ -178,26 +178,25 @@ exports[`App Stargazer App Component 1`] = `
                   </View>
                 </View>
                 <View
-                  style={Object {}}
+                  style={
+                    Object {
+                      "backgroundColor": "#FFF",
+                    }
+                  }
                 >
                   <View
                     onLayout={[Function]}
                     pointerEvents="box-none"
                     style={
                       Object {
-                        "borderBottomColor": "transparent",
-                        "borderBottomWidth": 0,
-                        "elevation": 0,
+                        "backgroundColor": "#FFF",
+                        "borderBottomColor": "#A7A7AA",
+                        "borderBottomWidth": 0.5,
                         "height": 64,
-                        "left": 0,
                         "paddingBottom": 0,
                         "paddingLeft": 0,
                         "paddingRight": 0,
                         "paddingTop": 20,
-                        "position": "absolute",
-                        "right": 0,
-                        "shadowColor": "transparent",
-                        "top": 0,
                       }
                     }
                   >
@@ -245,9 +244,9 @@ exports[`App Stargazer App Component 1`] = `
                             onLayout={[Function]}
                             style={
                               Object {
-                                "color": "rgb(255, 255, 255)",
-                                "fontSize": 20,
-                                "fontWeight": "bold",
+                                "color": "rgba(0, 0, 0, .9)",
+                                "fontSize": 17,
+                                "fontWeight": "600",
                                 "marginHorizontal": 16,
                                 "textAlign": "center",
                               }
