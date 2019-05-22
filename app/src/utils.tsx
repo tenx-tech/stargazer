@@ -5,7 +5,6 @@ import {
   NavigationScreenConfig,
   NavigationScreenOptions,
   NavigationScreenProp,
-  NavigationStackRouterConfig,
   StackNavigatorConfig,
   TransitionConfig,
 } from "react-navigation";
