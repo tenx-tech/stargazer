@@ -7,7 +7,10 @@ import {
 } from "react-navigation";
 
 import StargazerNavigator from "./Navigator";
-import { mapRouteConfigToStargazerRouteMap } from "./utils";
+import {
+  defaultNavigationOptionsType,
+  mapRouteConfigToStargazerRouteMap,
+} from "./utils";
 
 /* =============================================================================
 Types and Config
@@ -27,6 +30,7 @@ export interface StargazerProps {
   routeConfig: ReadonlyArray<StargazerRouteConfigObject>;
   appRouteConfig?: NavigationRouteConfigMap;
   imageAssets?: ReadonlyArray<any>;
+  defaultNavigationOptions?: defaultNavigationOptionsType;
   fontAssets?: { [key: string]: any };
 }
 
@@ -84,10 +88,11 @@ class Stargazer extends React.Component<StargazerProps, IState> {
     }
 
     const {
+      autoStart,
       routeConfig,
       appRouteConfig,
-      autoStart,
       backgroundColor,
+      defaultNavigationOptions,
     } = this.props;
     /**
      * Get final route map for Stargazer.
@@ -111,6 +116,7 @@ class Stargazer extends React.Component<StargazerProps, IState> {
       this.logger,
       initialRouteName,
       backgroundColor,
+      defaultNavigationOptions,
     );
 
     return (

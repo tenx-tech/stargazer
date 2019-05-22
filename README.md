@@ -14,9 +14,10 @@ Stargazer is a tool for manual testing UI regressions for Expo/React Native apps
 
 ![ui-demo](https://user-images.githubusercontent.com/18126719/56797289-fa6da580-6846-11e9-8081-9168b9699547.gif)
 
-
 ## Contents
 
+- [Stargazer](#stargazer)
+  - [Contents](#contents)
   - [Project Structure](#project-structure)
   - [Typical Workflow](#typical-workflow)
   - [Prerequisites](#prerequisites)
@@ -34,9 +35,9 @@ Stargazer is a tool for manual testing UI regressions for Expo/React Native apps
 
 This tool is organized into three subprojects: `app`, `client`, and `server`. Here's what each of these projects are responsible for:
 
-* **App:** React components to provide the automation to drive the app and record screenshots of each screen.
-* **Client:** UI browser output to visualize the recorded screenshots.
-* **Server:** Server to handle uploading and saving screenshot data.
+- **App:** React components to provide the automation to drive the app and record screenshots of each screen.
+- **Client:** UI browser output to visualize the recorded screenshots.
+- **Server:** Server to handle uploading and saving screenshot data.
 
 ## Typical Workflow
 
@@ -48,8 +49,8 @@ Stargazer assumes you have a React Native app developed with Expo which uses Rea
 
 ## Quick Start
 
-1) Run `npm install --save react-native-stargazer`.
-2) Add the following scripts to your `package.json`:
+1. Run `npm install --save react-native-stargazer`.
+2. Add the following scripts to your `package.json`:
 
 ```json
 {
@@ -61,12 +62,12 @@ Stargazer assumes you have a React Native app developed with Expo which uses Rea
 }
 ```
 
-3) Run `npm run stargazer:init`. This will create the UI browser app in your project folder.
-4) Import and render the `Stargazer` app component in your app source code, passing in a `routeConfig` (see detailed usage below) and a `stargazerServerUrl`.
-5) Run `npm run stargazer:server` and run `expo start` to start your app.
-6) Run your app on iOS and Android and press the "Launch" button. Wait for it to upload all screenshots.
-7) Run `npm run stargazer:view` to launch a local server which will render the captured app screenshots.
-8) Deploy the compiled output on any hosting environment you wish.
+3. Run `npm run stargazer:init`. This will create the UI browser app in your project folder.
+4. Import and render the `Stargazer` app component in your app source code, passing in a `routeConfig` (see detailed usage below) and a `stargazerServerUrl`.
+5. Run `npm run stargazer:server` and run `expo start` to start your app.
+6. Run your app on iOS and Android and press the "Launch" button. Wait for it to upload all screenshots.
+7. Run `npm run stargazer:view` to launch a local server which will render the captured app screenshots.
+8. Deploy the compiled output on any hosting environment you wish.
 
 ## Detailed Usage
 
@@ -76,7 +77,9 @@ To use this tool in your app first install it with `npm install --save react-nat
 export interface StargazerRouteConfigObject extends NavigationRouteConfig {
   name: string;
   screenName: string;
-  paramsForNextScreen?: { [key: string]: any }; /* Optional parameters for the next screen */
+  paramsForNextScreen?: {
+    [key: string]: any;
+  } /* Optional parameters for the next screen */;
 }
 
 export interface StargazerProps {
@@ -150,16 +153,17 @@ Once the upload process is finished, you're done! Just run `npm run stargazer:vi
 
 ## Stargazer Props
 
-| Property           | Type                                        | Required | Description                                                                                                                                                                                                  |
-| ------------------ | ------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| backgroundColor    | `string`                                    | No       | A background color to be applied for screen navigations. This may be necessary if your app screens use a specific background color.                                                                          | No |
-| autoStart          | `boolean`                                   | No       | A boolean which if set causes the app to automatically start recording screenshots once it firsts loads in Expo.                                                                                             |
-| disableLogging     | `boolean`                                   | No       | A flag to disable logging, if you wish.                                                                                                                                                                      |
-| stargazerServerUrl | `string`                                    | Yes      | The URL the local Stargazer upload server is running at, e.g. `http://1.2.3.4:9000/screenshot`. You must provide an IP address with this URL.                                                                |
-| routeConfig        | `ReadonlyArray<StargazerRouteConfigObject>` | Yes      | The route config required by Stargazer to render your app screens. See the code examples for more details. Each route object can provide optional parameters which will be passed to the next route.         |
-| appRouteConfig     | `NavigationRouteConfigMap`                  | No       | The React Navigation route config map for all your app screens. This is used to provide the default navigation options you provide to your app screens to the routes defined in the Stargazer `routeConfig`. |
-| imageAssets        | `ReadonlyArray<NodeRequire>`                | No       | An array of image asset require statements which will be loaded before the Stargazer app begins recording screenshots. Useful to avoid recording screens before images have been fully loaded.               |
-| fontAssets         | `{ [key: string]: any }`                    | No       | An array of font assets which will be loaded before the Stargazer app begins recording screenshots. Useful to avoid recording screens before fonts have been loaded.                                         |
+| Property                 | Type                                              | Required | Description                                                                                                                                                                                                  |
+| ------------------------ | ------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| backgroundColor          | `string`                                          | No       | A background color to be applied for screen navigations. This may be necessary if your app screens use a specific background color.                                                                          | No |
+| autoStart                | `boolean`                                         | No       | A boolean which if set causes the app to automatically start recording screenshots once it firsts loads in Expo.                                                                                             |
+| disableLogging           | `boolean`                                         | No       | A flag to disable logging, if you wish.                                                                                                                                                                      |
+| stargazerServerUrl       | `string`                                          | Yes      | The URL the local Stargazer upload server is running at, e.g. `http://1.2.3.4:9000/screenshot`. You must provide an IP address with this URL.                                                                |
+| routeConfig              | `ReadonlyArray<StargazerRouteConfigObject>`       | Yes      | The route config required by Stargazer to render your app screens. See the code examples for more details. Each route object can provide optional parameters which will be passed to the next route.         |
+| appRouteConfig           | `NavigationRouteConfigMap`                        | No       | The React Navigation route config map for all your app screens. This is used to provide the default navigation options you provide to your app screens to the routes defined in the Stargazer `routeConfig`. |
+| defaultNavigationOptions | `NavigationScreenConfig<NavigationScreenOptions>` | No       | Default React Navigation navigation options to apply to the app stack navigator.                                                                                                                             |
+| imageAssets              | `ReadonlyArray<NodeRequire>`                      | No       | An array of image asset require statements which will be loaded before the Stargazer app begins recording screenshots. Useful to avoid recording screens before images have been fully loaded.               |
+| fontAssets               | `{ [key: string]: any }`                          | No       | An array of font assets which will be loaded before the Stargazer app begins recording screenshots. Useful to avoid recording screens before fonts have been loaded.                                         |
 
 ## Example App
 
@@ -178,7 +182,6 @@ This will install the project dependencies and the dependencies of each sub proj
 
 To run the project tests, run the command `npm test`.
 
-
 ## Contributing
 
 We welcome any changes, requests, features, improvements, or bug fixes with pull requests or welcome anyone interested in more substantial changes to fork the library. We follow a normal git workflow process where pull requests can be reviewed and merged with approving reviews.
@@ -195,4 +198,4 @@ To publish a new version of `react-native-stargazer` run `npm run build` and `np
 
 ## Special Thanks
 
-Special thanks to [@bonham000](https://github.com/bonham000), [@AudyOdi](https://github.com/AudyOdi), and [@underheather](https://github.com/underheather).
+Special thanks to [@bonham000](****https****://github.com/bonham000), [@AudyOdi](https://github.com/AudyOdi), and [@underheather](https://github.com/underheather).

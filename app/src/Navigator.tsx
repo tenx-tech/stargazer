@@ -8,7 +8,7 @@ import {
 
 import { STARGAZER_INIT } from "./constants";
 import StartScreen from "./StartScreen";
-import { getStackNavigatorConfig } from "./utils";
+import { defaultNavigationOptionsType, getStackNavigatorConfig } from "./utils";
 
 /* =============================================================================
 Root navigator for Stargazer App.
@@ -56,10 +56,15 @@ export default (
   logger: (message: string) => void,
   initialRouteName: string,
   backgroundColor?: string,
+  defaultNavigationOptions?: defaultNavigationOptionsType,
 ) =>
   createAppContainer(
     createStackNavigator(
       getStargazerRoutes(routes, autoStart, logger, initialRouteName),
-      getStackNavigatorConfig(STARGAZER_INIT, backgroundColor),
+      getStackNavigatorConfig(
+        STARGAZER_INIT,
+        backgroundColor,
+        defaultNavigationOptions,
+      ),
     ),
   );

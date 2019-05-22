@@ -2,8 +2,10 @@ import React from "react";
 import { Animated, Easing, Platform } from "react-native";
 import {
   NavigationRouteConfigMap,
+  NavigationScreenConfig,
   NavigationScreenOptions,
   NavigationScreenProp,
+  NavigationStackRouterConfig,
   StackNavigatorConfig,
   TransitionConfig,
 } from "react-navigation";
@@ -128,6 +130,10 @@ export const mapRouteConfigToStargazerRouteMap = (
   );
 };
 
+export type defaultNavigationOptionsType = NavigationScreenConfig<
+  NavigationScreenOptions
+>;
+
 /**
  * Returns common configuration for a StackNavigator, including
  * a transparent header and provided initialRouteName.
@@ -138,10 +144,11 @@ export const mapRouteConfigToStargazerRouteMap = (
 export const getStackNavigatorConfig = (
   initialRouteName: string,
   backgroundColor: string = LIGHT,
+  defaultNavigationOptions?: defaultNavigationOptionsType,
 ): StackNavigatorConfig => ({
   initialRouteName,
   headerMode: "screen",
-  defaultNavigationOptions: transparentHeaderOptions,
+  defaultNavigationOptions,
   cardStyle: {
     opacity: 1,
     backgroundColor,
@@ -186,20 +193,4 @@ const transitionConfig = (
       return { transform: [{ translateX }] };
     },
   };
-};
-
-const transparentHeaderOptions: NavigationScreenOptions = {
-  headerTransparent: true,
-  headerStyle: {
-    elevation: 0,
-    borderBottomWidth: 0,
-    shadowColor: "transparent",
-  },
-  headerTintColor: LIGHT,
-  headerBackTitle: " ",
-  headerTitleStyle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: LIGHT,
-  },
 };
