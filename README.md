@@ -191,3 +191,5 @@ To publish a new version of `react-native-stargazer` run `npm run build` and `np
 ## License
 
 [MIT](https://github.com/tenx-tech/stargazer/blob/master/LICENSE)
+
+blah blah blah
