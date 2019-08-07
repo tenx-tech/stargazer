@@ -7,8 +7,12 @@ const getMockData = (os: "ios" | "android") => ({
     height: 15,
     photos: [
       {
-        name: "Screen",
-        screenshot: "asdhflkashflksahdflkhaslkjdfhsakljhfal",
+        name: "Screen 1",
+        screenshot: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzwAAAcA",
+      },
+      {
+        name: "Screen 2",
+        screenshot: "screenshots/test.png",
       },
     ],
   },
@@ -30,21 +34,40 @@ Array [
   Object {
     "data": Object {
       "android": <img
-        alt="Screen"
+        alt="Screen 1"
         className="ScreenImage"
         height={11.25}
-        src="asdhflkashflksahdflkhaslkjdfhsakljhfal"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzwAAAcA"
         width={7.5}
       />,
       "ios": <img
-        alt="Screen"
+        alt="Screen 1"
         className="ScreenImage"
         height={11.25}
-        src="asdhflkashflksahdflkhaslkjdfhsakljhfal"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzwAAAcA"
         width={7.5}
       />,
     },
-    "name": "Screen",
+    "name": "Screen 1",
+  },
+  Object {
+    "data": Object {
+      "android": <img
+        alt="Screen 2"
+        className="ScreenImage"
+        height={11.25}
+        src="${process.env.PUBLIC_URL}/screenshots/test.png"
+        width={7.5}
+      />,
+      "ios": <img
+        alt="Screen 2"
+        className="ScreenImage"
+        height={11.25}
+        src="${process.env.PUBLIC_URL}/screenshots/test.png"
+        width={7.5}
+      />,
+    },
+    "name": "Screen 2",
   },
 ]
 `);

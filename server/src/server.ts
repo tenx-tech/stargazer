@@ -25,9 +25,9 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 /**
  * POST endpoint for screenshots.
  */
-app.post("/screenshot", (request, response) => {
+app.post("/screenshot", async (request, response) => {
   const { body } = request;
-  const result = processScreenshotDataUpload(body);
+  const result = await processScreenshotDataUpload(body);
 
   switch (result.type) {
     case ResultType.OK:

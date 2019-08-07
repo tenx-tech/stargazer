@@ -143,10 +143,7 @@ export default class extends Component<{}, IState> {
           className="ScreenshotContainer"
           style={{ paddingLeft: DESKTOP ? 300 : 0 }}
         >
-          {this.state.data.map(data => {
-            // @ts-ignore
-            return this.renderScreenshotsItem(data);
-          })}
+          {this.state.data.map(data => this.renderScreenshotsItem(data))}
         </div>
       </div>
     );
@@ -234,9 +231,10 @@ export default class extends Component<{}, IState> {
   };
 
   fetchScreenshotsData = async () => {
-    const iosData = await this.fetchData("ios");
-    const androidData = await this.fetchData("android");
-
+    const [iosData, androidData] = await Promise.all([
+      this.fetchData("ios"),
+      this.fetchData("android"),
+    ]);
     if (iosData && androidData) {
       const processedData = processScreenshotsData(iosData, androidData);
       this.setState({
@@ -267,8 +265,7 @@ export default class extends Component<{}, IState> {
           },
         },
       );
-      const json: ScreenshotsData = await result.json();
-      return json;
+      return await result.json();
     } catch (err) {
       console.log(
         `Could not fetch screenshots source JSON for device: ${source}`,

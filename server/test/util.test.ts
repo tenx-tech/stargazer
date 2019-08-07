@@ -5,17 +5,17 @@ import { processScreenshotDataUpload } from "../src/util";
  * mock photos upload data.
  */
 describe("utils - processScreenshotDataUpload success", () => {
-  test("test success case", () => {
-    const result = processScreenshotDataUpload({
+  test("test success case", async () => {
+    const result = await processScreenshotDataUpload({
       os: "ios",
       photos: [],
     });
     expect(result).toMatchInlineSnapshot(`
-            Object {
-              "message": "Success!",
-              "type": "OK",
-            }
-        `);
+                  Object {
+                    "message": "Success!",
+                    "type": "OK",
+                  }
+            `);
   });
 });
 
@@ -27,8 +27,8 @@ describe("utils - processScreenshotDataUpload failure", () => {
     });
   });
 
-  test("test failure case", () => {
-    const result = processScreenshotDataUpload({
+  test("test failure case", async () => {
+    const result = await processScreenshotDataUpload({
       os: "ios",
       photos: [],
     });

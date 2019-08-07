@@ -86,7 +86,7 @@ export const processScreenshotsData = (
             height={height * IMAGE_RESIZE}
             width={width * IMAGE_RESIZE}
             alt={name}
-            src={screenshot}
+            src={resolveScreenshotSrc(screenshot)}
             className="ScreenImage"
           />
         ),
@@ -114,7 +114,7 @@ export const processScreenshotsData = (
             height={height * IMAGE_RESIZE}
             width={width * IMAGE_RESIZE}
             alt={name}
-            src={screenshot}
+            src={resolveScreenshotSrc(screenshot)}
             className="ScreenImage"
           />
         ),
@@ -179,3 +179,13 @@ const getPlaceholderDimensions = (
     };
   }
 };
+
+/**
+ * get valid screenshot source by checking if the image is a url or data image
+ * @param screenshot
+ * @return valid image source
+ */
+const resolveScreenshotSrc = (screenshot: string): string =>
+  screenshot.startsWith("data:image")
+    ? screenshot
+    : `${process.env.PUBLIC_URL}/${screenshot}`;

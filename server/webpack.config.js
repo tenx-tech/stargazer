@@ -11,10 +11,14 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
+      }
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js",".node"],
   },
   output: {
     filename: "server.js",
