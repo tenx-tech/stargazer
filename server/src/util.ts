@@ -67,7 +67,7 @@ const processScreenshotDataUpload = async (
       data: {
         ...body,
         photos: await Promise.all(
-          body.photos.map(async (photo, index) => {
+          body.photos.map(async photo => {
             // try to save the screen shot to the disk
             let screenshot = photo.screenshot;
             const name = `${filenamify(photo.name)}.png`;
