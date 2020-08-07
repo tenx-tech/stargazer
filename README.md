@@ -1,3 +1,6 @@
+# ⚠️ THIS PROJECT IS NO LONGER MAINTAINED ⚠️
+Due to shifts in our tech stack, this project is no longer actively maintained anymore.  For further developments, please feel free to fork the repo and create your own version of Stargazer. Thank you for the interest in this project. Feel free to reach out to the organization for any questions.
+- - -
 # Stargazer
 
 <img width="215" alt="Stargazer Logo" src="https://user-images.githubusercontent.com/18126719/56791599-0868f980-683a-11e9-8a8b-134ced040c8e.png">
